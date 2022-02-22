@@ -1,0 +1,142 @@
+XSPBLASSRCS = $(foreach src,$(SRC),$(if $(findstring _x_,$(src)),$(src)))
+FSPBLASSRCS = $(foreach src,$(SRC),$(if $(findstring _f_,$(src)),$(src)))
+CSPBLASSRCS = $(foreach src,$(SRC),$(if $(findstring _c_,$(src)),$(src)))
+
+XSPBLASSRCCPPS = $(foreach src,$(SRCCPP),$(if $(findstring _x_,$(src)),$(src)))
+FSPBLASSRCCPPS = $(foreach src,$(SRCCPP),$(if $(findstring _f_,$(src)),$(src)))
+CSPBLASSRCCPPS = $(foreach src,$(SRCCPP),$(if $(findstring _c_,$(src)),$(src)))
+
+XSPBLASOBJS = $(patsubst %.c, $(OBJ_DIR)/%.o, $(notdir $(XSPBLASSRCS)))
+FSPBLASOBJS = $(patsubst %.c, $(OBJ_DIR)/%.o, $(notdir $(FSPBLASSRCS)))
+CSPBLASOBJS = $(patsubst %.c, $(OBJ_DIR)/%.o, $(notdir $(CSPBLASSRCS)))
+
+XSPBLASOBJSCPP = $(patsubst %.cpp, $(OBJ_DIR)/%.o, $(notdir $(XSPBLASSRCCPPS)))
+FSPBLASOBJSCPP = $(patsubst %.cpp, $(OBJ_DIR)/%.o, $(notdir $(FSPBLASSRCCPPS)))
+CSPBLASOBJSCPP = $(patsubst %.cpp, $(OBJ_DIR)/%.o, $(notdir $(CSPBLASSRCCPPS)))
+
+COMMONOBJS_ALL = $(patsubst %.c, $(OBJ_DIR)/%.o, $(notdir $(SRC)))
+COMMONOBJS_NOX = $(filter-out $(XSPBLASOBJS),$(COMMONOBJS_ALL))
+COMMONOBJS_NOXF = $(filter-out $(FSPBLASOBJS),$(COMMONOBJS_NOX))
+COMMONOBJS_NOXFC = $(filter-out $(CSPBLASOBJS),$(COMMONOBJS_NOXF))
+COMMONOBJS = $(COMMONOBJS_NOXFC)
+
+COMMONOBJS_ALLCPP = $(patsubst %.cpp, $(OBJ_DIR)/%.o, $(notdir $(SRCCPP)))
+COMMONOBJS_NOXCPP = $(filter-out $(XSPBLASOBJSCPP),$(COMMONOBJS_ALLCPP))
+COMMONOBJS_NOXFCPP = $(filter-out $(FSPBLASOBJSCPP),$(COMMONOBJS_NOXCPP))
+COMMONOBJS_NOXFCCPP = $(filter-out $(CSPBLASOBJSCPP),$(COMMONOBJS_NOXFCPP))
+COMMONOBJSCPP = $(COMMONOBJS_NOXFCCPP)
+
+ASMOBJS += $(patsubst %.S, $(OBJ_DIR)/%.o, $(notdir $(ASM_SRC)))
+
+XSSPBLASOBJS = $(subst _x_,_s_,$(XSPBLASOBJS))
+XDSPBLASOBJS = $(subst _x_,_d_,$(XSPBLASOBJS))
+XCSPBLASOBJS = $(subst _x_,_c_,$(XSPBLASOBJS))
+XZSPBLASOBJS = $(subst _x_,_z_,$(XSPBLASOBJS))
+FSSPBLASOBJS = $(subst _f_,_s_,$(FSPBLASOBJS))
+FDSPBLASOBJS = $(subst _f_,_d_,$(FSPBLASOBJS))
+CCSPBLASOBJS = $(subst _c_,_c_,$(CSPBLASOBJS))
+CZSPBLASOBJS = $(subst _c_,_z_,$(CSPBLASOBJS))
+
+XSSPBLASOBJSCPP = $(subst _x_,_s_,$(XSPBLASOBJSCPP))
+XDSPBLASOBJSCPP = $(subst _x_,_d_,$(XSPBLASOBJSCPP))
+XCSPBLASOBJSCPP = $(subst _x_,_c_,$(XSPBLASOBJSCPP))
+XZSPBLASOBJSCPP = $(subst _x_,_z_,$(XSPBLASOBJSCPP))
+FSSPBLASOBJSCPP = $(subst _f_,_s_,$(FSPBLASOBJSCPP))
+FDSPBLASOBJSCPP = $(subst _f_,_d_,$(FSPBLASOBJSCPP))
+CCSPBLASOBJSCPP = $(subst _c_,_c_,$(CSPBLASOBJSCPP))
+CZSPBLASOBJSCPP = $(subst _c_,_z_,$(CSPBLASOBJSCPP))
+
+SPBLASOBJS = $(XSSPBLASOBJS) $(XDSPBLASOBJS) $(XCSPBLASOBJS) $(XZSPBLASOBJS) \
+             $(FSSPBLASOBJS) $(FDSPBLASOBJS) $(CCSPBLASOBJS) $(CZSPBLASOBJS) \
+			 $(XSSPBLASOBJSCPP) $(XDSPBLASOBJSCPP) $(XCSPBLASOBJSCPP) $(XZSPBLASOBJSCPP) \
+             $(FSSPBLASOBJSCPP) $(FDSPBLASOBJSCPP) $(CCSPBLASOBJSCPP) $(CZSPBLASOBJSCPP)
+
+$(XSSPBLASOBJS) $(FSSPBLASOBJS): override CFLAGS += -UDOUBLE  -UCOMPLEX
+$(XDSPBLASOBJS) $(FDSPBLASOBJS): override CFLAGS += -DDOUBLE  -UCOMPLEX
+$(XCSPBLASOBJS) $(CCSPBLASOBJS): override CFLAGS += -UDOUBLE  -DCOMPLEX
+$(XZSPBLASOBJS) $(CZSPBLASOBJS): override CFLAGS += -DDOUBLE  -DCOMPLEX
+
+$(XSSPBLASOBJSCPP) $(FSSPBLASOBJSCPP): override CPPFLAGS += -UDOUBLE  -UCOMPLEX
+$(XDSPBLASOBJSCPP) $(FDSPBLASOBJSCPP): override CPPFLAGS += -DDOUBLE  -UCOMPLEX
+$(XCSPBLASOBJSCPP) $(CCSPBLASOBJSCPP): override CPPFLAGS += -UDOUBLE  -DCOMPLEX
+$(XZSPBLASOBJSCPP) $(CZSPBLASOBJSCPP): override CPPFLAGS += -DDOUBLE  -DCOMPLEX
+
+.SECONDEXPANSION:
+
+lib :: $(SPBLASOBJS) $(COMMONOBJS) $(COMMONOBJSCPP) $(SPBLASASMS) $(ASMOBJS)
+	@$(AR) -ru $(LIB_DIR)/$(LIBNAME).a $^
+
+test :: $(TEST_BIN)
+
+show:
+	echo $(CCSPBLASOBJS)
+	echo $(CZSPBLASOBJS)
+
+$(XSSPBLASOBJS) : $(OBJ_DIR)/%.o : $$(subst _s_,_x_,%.c)
+	$(CC) -c -o $@ $^ $(CFLAGS) -UONAME -DONAME=$(*F)
+
+$(XDSPBLASOBJS) : $(OBJ_DIR)/%.o : $$(subst _d_,_x_,%.c)
+	$(CC) -c -o $@ $^ $(CFLAGS) -UONAME -DONAME=$(*F)
+
+$(XCSPBLASOBJS) : $(OBJ_DIR)/%.o : $$(subst _c_,_x_,%.c)
+	$(CC) -c -o $@ $^ $(CFLAGS) -UONAME -DONAME=$(*F)
+
+$(XZSPBLASOBJS) : $(OBJ_DIR)/%.o : $$(subst _z_,_x_,%.c)
+	$(CC) -c -o $@ $^ $(CFLAGS) -UONAME -DONAME=$(*F)
+
+$(FSSPBLASOBJS) : $(OBJ_DIR)/%.o : $$(subst _s_,_f_,%.c)
+	$(CC) -c -o $@ $^ $(CFLAGS) -UONAME -DONAME=$(*F)
+
+$(FDSPBLASOBJS) : $(OBJ_DIR)/%.o : $$(subst _d_,_f_,%.c)
+	$(CC) -c -o $@ $^ $(CFLAGS) -UONAME -DONAME=$(*F)
+
+$(CCSPBLASOBJS) : $(OBJ_DIR)/%.o : $$(subst _c_,_c_,%.c)
+	$(CC) -c -o $@ $^ $(CFLAGS) -UONAME -DONAME=$(*F)
+
+$(CZSPBLASOBJS) : $(OBJ_DIR)/%.o : $$(subst _z_,_c_,%.c)
+	$(CC) -c -o $@ $^ $(CFLAGS) -UONAME -DONAME=$(*F)
+
+$(XSSPBLASOBJSCPP) : $(OBJ_DIR)/%.o : $$(subst _s_,_x_,%.cpp)
+	$(HCC) -c -o $@ $^ $(CPPFLAGS) -UONAME -DONAME=$(*F)
+
+$(XDSPBLASOBJSCPP) : $(OBJ_DIR)/%.o : $$(subst _d_,_x_,%.cpp)
+	$(HCC) -c -o $@ $^ $(CPPFLAGS) -UONAME -DONAME=$(*F)
+
+$(XCSPBLASOBJSCPP) : $(OBJ_DIR)/%.o : $$(subst _c_,_x_,%.cpp)
+	$(HCC) -c -o $@ $^ $(CPPFLAGS) -UONAME -DONAME=$(*F)
+
+$(XZSPBLASOBJSCPP) : $(OBJ_DIR)/%.o : $$(subst _z_,_x_,%.cpp)
+	$(HCC) -c -o $@ $^ $(CPPFLAGS) -UONAME -DONAME=$(*F)
+
+$(FSSPBLASOBJSCPP) : $(OBJ_DIR)/%.o : $$(subst _s_,_f_,%.cpp)
+	$(HCC) -c -o $@ $^ $(CPPFLAGS) -UONAME -DONAME=$(*F)
+
+$(FDSPBLASOBJSCPP) : $(OBJ_DIR)/%.o : $$(subst _d_,_f_,%.cpp)
+	$(HCC) -c -o $@ $^ $(CPPFLAGS) -UONAME -DONAME=$(*F)
+
+$(CCSPBLASOBJSCPP) : $(OBJ_DIR)/%.o : $$(subst _c_,_c_,%.cpp)
+	$(HCC) -c -o $@ $^ $(CPPFLAGS) -UONAME -DONAME=$(*F)
+
+$(CZSPBLASOBJSCPP) : $(OBJ_DIR)/%.o : $$(subst _z_,_c_,%.cpp)
+	$(HCC) -c -o $@ $^ $(CPPFLAGS) -UONAME -DONAME=$(*F)
+
+$(COMMONOBJS) : $(OBJ_DIR)/%.o : %.c
+	$(CC) -c -o $@ $^ $(CFLAGS) -UONAME 
+
+$(COMMONOBJSCPP) : $(OBJ_DIR)/%.o : %.cpp	
+	$(HCC) -c -o $@ $^ $(CPPFLAGS) -UONAME 
+
+$(ASMOBJS) : $(OBJ_DIR)/%.o : %.S
+	$(CC) -c -o $@ $^ $(CFLAGS) -UONAME 
+
+$(OBJ) : $(OBJ_DIR)/%.o : %.c
+	$(CC) -c -o $@ $^ $(CFLAGS) -UONAME 
+
+$(OBJCPP) : $(OBJ_DIR)/%.o : %.cpp
+	$(HCC) -c -o $@ $^ $(CPPFLAGS) -UONAME 
+
+$(BIN_DIR)/% : $(OBJ_DIR)/%.o $(LIB_DIR)/libalpha_spblas.a $(TEST_COMMON_OBJS)
+	$(CC) -o $@ $^ $(CFLAGS) $(LDFLAGS)
+
+$(ASM_DIR)/%.S : %.c
+	$(CC) -S -o $@ $^ $(CFLAGS) -UONAME -DONAME=$(*F)

@@ -1,0 +1,166 @@
+/**
+ * @brief ict dcu mv csr test
+ * @author HPCRC, ICT
+ */
+
+#include <hip/hip_runtime_api.h>
+#include <rocsparse.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+#include <iomanip>
+#include <iostream>
+#include <vector>
+
+#include "rocsparse.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif /* __cplusplus */
+
+#include <alpha_spblas_dcu.h>
+
+const char *file;
+bool check;
+int iter;
+
+// sparse vector
+ALPHA_INT *alpha_x_idx;
+rocsparse_int *roc_x_idx;
+float *alpha_x_val, *roc_x_val, *roc_y, *alpha_y;
+float c = 2., s = 3.;
+
+ALPHA_INT idx_n = 10000;
+
+static void roc_roti()
+{
+    // rocSPARSE handle
+    rocsparse_handle handle;
+    rocsparse_create_handle(&handle);
+
+    hipDeviceProp_t devProp;
+    int device_id = 0;
+
+    hipGetDevice(&device_id);
+    hipGetDeviceProperties(&devProp, device_id);
+    std::cout << "Device: " << devProp.name << std::endl;
+
+    // Offload data to device
+    rocsparse_int *dx_idx = NULL;
+    float *dx_val         = NULL;
+    float *dy             = NULL;
+
+    hipMalloc((void **)&dx_idx, sizeof(rocsparse_int) * idx_n);
+    hipMalloc((void **)&dx_val, sizeof(float) * idx_n);
+    hipMalloc((void **)&dy, sizeof(float) * idx_n * 20);
+
+    hipMemcpy(dx_idx, roc_x_idx, sizeof(rocsparse_int) * idx_n, hipMemcpyHostToDevice);
+    hipMemcpy(dx_val, roc_x_val, sizeof(float) * idx_n, hipMemcpyHostToDevice);
+    hipMemcpy(dy, roc_y, sizeof(float) * idx_n * 20, hipMemcpyHostToDevice);
+
+    // Call rocsparse csrmv
+    roc_call_exit(rocsparse_sroti(handle, idx_n, dx_val, dx_idx, dy, &c, &s, rocsparse_index_base_zero),
+                  "rocsparse_sroti");
+
+    // Device synchronization
+    hipDeviceSynchronize();
+
+    hipMemcpy(roc_y, dy, sizeof(float) * idx_n * 20, hipMemcpyDeviceToHost);
+    hipMemcpy(roc_x_val, dx_val, sizeof(float) * idx_n, hipMemcpyDeviceToHost);
+
+    // Clear up on device
+    hipFree(dx_val);
+    hipFree(dx_idx);
+    hipFree(dy);
+    rocsparse_destroy_handle(handle);
+}
+
+static void alpha_roti()
+{
+    // rocSPARSE handle
+    alphasparse_dcu_handle_t handle;
+    init_handle(&handle);
+    alphasparse_dcu_get_handle(&handle);
+
+    hipDeviceProp_t devProp;
+    int device_id = 0;
+
+    hipGetDevice(&device_id);
+    hipGetDeviceProperties(&devProp, device_id);
+    std::cout << "Device: " << devProp.name << std::endl;
+
+    // Offload data to device
+    ALPHA_INT *dx_idx = NULL;
+    float *dx_val     = NULL;
+    float *dy         = NULL;
+
+    hipMalloc((void **)&dx_idx, sizeof(ALPHA_INT) * idx_n);
+    hipMalloc((void **)&dx_val, sizeof(float) * idx_n);
+    hipMalloc((void **)&dy, sizeof(float) * idx_n * 20);
+
+    hipMemcpy(dx_idx, roc_x_idx, sizeof(ALPHA_INT) * idx_n, hipMemcpyHostToDevice);
+    hipMemcpy(dx_val, alpha_x_val, sizeof(float) * idx_n, hipMemcpyHostToDevice);
+    hipMemcpy(dy, alpha_y, sizeof(float) * idx_n * 20, hipMemcpyHostToDevice);
+
+    // Call rocsparse csrmv
+    alphasparse_dcu_s_roti(handle, idx_n, dx_val, dx_idx, dy, &c, &s, ALPHA_SPARSE_INDEX_BASE_ONE);
+
+    // Device synchronization
+    hipDeviceSynchronize();
+
+    hipMemcpy(alpha_y, dy, sizeof(float) * idx_n * 20, hipMemcpyDeviceToHost);
+    hipMemcpy(alpha_x_val, dx_val, sizeof(float) * idx_n, hipMemcpyDeviceToHost);
+
+    // Clear up on device
+    hipFree(dx_val);
+    hipFree(dx_idx);
+    hipFree(dy);
+    alphasparse_dcu_destory_handle(handle);
+}
+
+int main(int argc, const char *argv[])
+{
+    // args
+    args_help(argc, argv);
+    file  = args_get_data_file(argc, argv);
+    check = args_get_if_check(argc, argv);
+    iter  = args_get_iter(argc, argv);
+
+    alpha_x_idx =
+        (ALPHA_INT *)alpha_memalign(sizeof(ALPHA_INT) * idx_n, DEFAULT_ALIGNMENT);
+    roc_x_idx   = (rocsparse_int *)alpha_memalign(sizeof(rocsparse_int) * idx_n,
+                                                DEFAULT_ALIGNMENT);
+    roc_x_val   = (float *)alpha_memalign(sizeof(float) * idx_n, DEFAULT_ALIGNMENT);
+    alpha_x_val = (float *)alpha_memalign(sizeof(float) * idx_n, DEFAULT_ALIGNMENT);
+    alpha_y     = (float *)alpha_memalign(sizeof(float) * idx_n * 20, DEFAULT_ALIGNMENT);
+    roc_y       = (float *)alpha_memalign(sizeof(float) * idx_n * 20, DEFAULT_ALIGNMENT);
+
+    alpha_fill_random_s(alpha_y, 1, idx_n * 20);
+    alpha_fill_random_s(roc_y, 1, idx_n * 20);
+    alpha_fill_random_s(roc_x_val, 1, idx_n);
+    alpha_fill_random_s(alpha_x_val, 1, idx_n);
+
+    for (ALPHA_INT i = 0; i < idx_n; i++) {
+        alpha_x_idx[i] = i * 20;
+        roc_x_idx[i]   = i * 20;
+    }
+
+    alpha_roti();
+
+    if (check) {
+        roc_roti();
+        check_s(alpha_y, idx_n * 20, roc_y, idx_n * 20);
+        check_s(roc_x_val, idx_n, alpha_x_val, idx_n);
+    }
+    printf("\n");
+
+    alpha_free(roc_x_val);
+    alpha_free(alpha_x_val);
+    alpha_free(roc_x_idx);
+    alpha_free(alpha_x_idx);
+    return 0;
+}
+
+#ifdef __cplusplus
+}
+#endif /*__cplusplus */

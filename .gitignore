@@ -1,0 +1,14 @@
+.idea
+.vscode
+*.mtx
+*.ans
+lib/*
+obj/*
+bin/*
+asm/*
+~*
+arm_neon.h
+.~*
+run.sh
+prof/*
+.DS_Store
