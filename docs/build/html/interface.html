@@ -9,7 +9,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>1. AlphaSparse sparse matrix algorithm library interface description &mdash; AlphaSparse 1.0.0 documentation</title>
+  <title>1. AlphaSparse documentation &mdash; AlphaSparse 1.0.0 documentation</title>
   
 
   
@@ -85,10 +85,10 @@
             
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">1. AlphaSparse sparse matrix algorithm library interface description</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. AlphaSparse documentation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#general">1.1. GENERAL</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#function-return-value">1.1.1. 1. Function return value</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#basic-operations-of-sparse-matrix">1.1.2. 2. Basic operations of sparse matrix</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#function-return-value">1.1.1. Function return value</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#basic-operations-of-sparse-matrix">1.1.2. Basic operations of sparse matrix</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#alphasparse-create-coo">1.1.2.1. alphasparse_create_coo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#alphasparse-create-csc">1.1.2.2. alphasparse_create_csc</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#alphasparse-create-csr">1.1.2.3. alphasparse_create_csr</a></li>
@@ -108,19 +108,19 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#cpu-backend">1.2. CPU backend</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#multiplying-sparse-matrix-and-dense-vector">1.2.1. 1. Multiplying sparse matrix and dense vector</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#multiplying-sparse-matrix-and-dense-matrix">1.2.2. 2. Multiplying sparse matrix and dense matrix</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sparse-matrix-and-sparse-matrix-multiplication">1.2.3. 3. Sparse matrix and sparse matrix multiplication</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#multiplying-sparse-matrix-and-dense-vector">1.2.1. Multiplying sparse matrix and dense vector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#multiplying-sparse-matrix-and-dense-matrix">1.2.2. Multiplying sparse matrix and dense matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sparse-matrix-and-sparse-matrix-multiplication">1.2.3. Sparse matrix and sparse matrix multiplication</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#alphasparse-spmmd">1.2.3.1. 3.1 alphasparse_spmmd</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#alphasparse-spmm">1.2.3.2. 3.2 alphasparse_spmm</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#solving-linear-equations">1.2.4. 4. Solving linear equations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#solving-linear-equations">1.2.4. Solving linear equations</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#alphasparse-trsv">1.2.4.1. 4.1 alphasparse_trsv</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#alphasparse-trsm">1.2.4.2. 4.2 alphasparse_trsm</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#level1-vector-operation">1.2.5. 5. level1 Vector operation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#level1-vector-operation">1.2.5. level1 Vector operation</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#alphasparse-axpy">1.2.5.1. alphasparse_axpy</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#alphasparse-gthr">1.2.5.2. alphasparse_gthr</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#alphasparse-gthrz">1.2.5.3. alphasparse_gthrz</a></li>
@@ -217,7 +217,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li><span class="section-number">1. </span>AlphaSparse sparse matrix algorithm library interface description</li>
+      <li><span class="section-number">1. </span>AlphaSparse documentation</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -236,8 +236,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="alphasparse-sparse-matrix-algorithm-library-interface-description">
-<h1><span class="section-number">1. </span>AlphaSparse sparse matrix algorithm library interface description<a class="headerlink" href="#alphasparse-sparse-matrix-algorithm-library-interface-description" title="Permalink to this headline">¶</a></h1>
+  <section id="alphasparse-documentation">
+<h1><span class="section-number">1. </span>AlphaSparse documentation<a class="headerlink" href="#alphasparse-documentation" title="Permalink to this headline">¶</a></h1>
 <p>This document provides a detailed stage function interface description
 of the AlphaSparse sparse matrix algorithm library, including mv, mm and
 spmmd, etc. The function will perform the corresponding algorithm
@@ -247,7 +247,7 @@ reception parameters.</p>
 <section id="general">
 <h2><span class="section-number">1.1. </span>GENERAL<a class="headerlink" href="#general" title="Permalink to this headline">¶</a></h2>
 <section id="function-return-value">
-<h3><span class="section-number">1.1.1. </span>1. Function return value<a class="headerlink" href="#function-return-value" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.1.1. </span>Function return value<a class="headerlink" href="#function-return-value" title="Permalink to this headline">¶</a></h3>
 <p>The function has several return values, indicating whether the function
 is executed successfully, as shown below:</p>
 <table class="docutils align-default">
@@ -294,7 +294,7 @@ supported</p></td>
 </table>
 </section>
 <section id="basic-operations-of-sparse-matrix">
-<h3><span class="section-number">1.1.2. </span>2. Basic operations of sparse matrix<a class="headerlink" href="#basic-operations-of-sparse-matrix" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.1.2. </span>Basic operations of sparse matrix<a class="headerlink" href="#basic-operations-of-sparse-matrix" title="Permalink to this headline">¶</a></h3>
 <p>Algorithm library currently supports the direct creation of CSR, COO,
 CSC and BSR sparse matrix format, and conversion from COO to CSR, CSC,
 BSR, DIA and SKY, the interface supports four data formats.</p>
@@ -1184,7 +1184,7 @@ sparse matrix.</p>
 <section id="cpu-backend">
 <h2><span class="section-number">1.2. </span>CPU backend<a class="headerlink" href="#cpu-backend" title="Permalink to this headline">¶</a></h2>
 <section id="multiplying-sparse-matrix-and-dense-vector">
-<h3><span class="section-number">1.2.1. </span>1. Multiplying sparse matrix and dense vector<a class="headerlink" href="#multiplying-sparse-matrix-and-dense-vector" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.2.1. </span>Multiplying sparse matrix and dense vector<a class="headerlink" href="#multiplying-sparse-matrix-and-dense-vector" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">alphasparse_status_t</span><span class="w"> </span><span class="n">alphasparse_</span><span class="o">?</span><span class="n">_mv</span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">alphasparse_operation_t</span><span class="w"> </span><span class="n">operation</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">ALPHA_Number</span><span class="w"> </span><span class="n">alpha</span><span class="p">,</span><span class="w"></span>
@@ -1289,7 +1289,7 @@ length is at least the number of rows of matrix <code class="docutils literal no
 </table>
 </section>
 <section id="multiplying-sparse-matrix-and-dense-matrix">
-<h3><span class="section-number">1.2.2. </span>2. Multiplying sparse matrix and dense matrix<a class="headerlink" href="#multiplying-sparse-matrix-and-dense-matrix" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.2.2. </span>Multiplying sparse matrix and dense matrix<a class="headerlink" href="#multiplying-sparse-matrix-and-dense-matrix" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">alphasparse_status_t</span><span class="w"> </span><span class="n">alphasparse_</span><span class="o">?</span><span class="n">_mm</span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">alphasparse_operation_t</span><span class="w"> </span><span class="n">operation</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">ALPHA_Number</span><span class="w"> </span><span class="n">alpha</span><span class="p">,</span><span class="w"></span>
@@ -1478,7 +1478,7 @@ of columns of matrix
 </table>
 </section>
 <section id="sparse-matrix-and-sparse-matrix-multiplication">
-<h3><span class="section-number">1.2.3. </span>3. Sparse matrix and sparse matrix multiplication<a class="headerlink" href="#sparse-matrix-and-sparse-matrix-multiplication" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.2.3. </span>Sparse matrix and sparse matrix multiplication<a class="headerlink" href="#sparse-matrix-and-sparse-matrix-multiplication" title="Permalink to this headline">¶</a></h3>
 <p>The functions are divided into two categories according to the different
 output results:</p>
 <section id="alphasparse-spmmd">
@@ -1606,7 +1606,7 @@ Conjugation Transpose, <code class="docutils literal notranslate"><span class="p
 </section>
 </section>
 <section id="solving-linear-equations">
-<h3><span class="section-number">1.2.4. </span>4. Solving linear equations<a class="headerlink" href="#solving-linear-equations" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.2.4. </span>Solving linear equations<a class="headerlink" href="#solving-linear-equations" title="Permalink to this headline">¶</a></h3>
 <section id="alphasparse-trsv">
 <h4><span class="section-number">1.2.4.1. </span>4.1 alphasparse_trsv<a class="headerlink" href="#alphasparse-trsv" title="Permalink to this headline">¶</a></h4>
 <p>Equations for multiplying a sparse matrix and a dense vector:</p>
@@ -1887,7 +1887,7 @@ of columns of matrix
 </section>
 </section>
 <section id="level1-vector-operation">
-<h3><span class="section-number">1.2.5. </span>5. level1 Vector operation<a class="headerlink" href="#level1-vector-operation" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.2.5. </span>level1 Vector operation<a class="headerlink" href="#level1-vector-operation" title="Permalink to this headline">¶</a></h3>
 <section id="alphasparse-axpy">
 <h4><span class="section-number">1.2.5.1. </span>alphasparse_axpy<a class="headerlink" href="#alphasparse-axpy" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">alphasparse_status_t</span><span class="w"> </span><span class="n">alphasparse_</span><span class="o">?</span><span class="n">_axpy</span><span class="w"> </span><span class="p">(</span><span class="w"></span>

@@ -2,8 +2,11 @@
    sphinx-quickstart on Wed Feb 23 16:31:11 2022.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
+##########################
+AlphaSparse Documentation
+#########################
 
-Welcome to AlphaSparse's documentation!
+API:This is a list of API functions provided by rocSPARSE.
 =======================================
 
 .. toctree::

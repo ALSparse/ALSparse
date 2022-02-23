@@ -1,4 +1,4 @@
-AlphaSparse sparse matrix algorithm library interface description
+AlphaSparse documentation
 =================================================================
 
 This document provides a detailed stage function interface description
@@ -11,7 +11,7 @@ reception parameters.
 GENERAL
 -------
 
-1. Function return value
+Function return value
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 The function has several return values, indicating whether the function
@@ -42,7 +42,7 @@ is executed successfully, as shown below:
 | _SPARSE_STATUS_NOT_SUPPORTED`` | supported                           |
 +--------------------------------+-------------------------------------+
 
-2. Basic operations of sparse matrix
+Basic operations of sparse matrix
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Algorithm library currently supports the direct creation of CSR, COO,
@@ -763,7 +763,7 @@ sparse matrix.
 CPU backend
 -----------
 
-1. Multiplying sparse matrix and dense vector
+Multiplying sparse matrix and dense vector
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code:: cpp
@@ -855,7 +855,7 @@ below:
 |              | length is at least the number of rows of matrix ``A`` |
 +--------------+-------------------------------------------------------+
 
-2. Multiplying sparse matrix and dense matrix
+Multiplying sparse matrix and dense matrix
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code:: cpp
@@ -995,7 +995,7 @@ For param denes matrix ``y``, data layouts is shown below:
 | ``y``) is                  |         |                               |
 +----------------------------+---------+-------------------------------+
 
-3. Sparse matrix and sparse matrix multiplication
+Sparse matrix and sparse matrix multiplication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The functions are divided into two categories according to the different
@@ -1102,7 +1102,7 @@ number. The input parameters of the function are shown below:
 | C            | Data structure of sparse matrix C                     |
 +--------------+-------------------------------------------------------+
 
-4. Solving linear equations
+Solving linear equations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 4.1 alphasparse_trsv
@@ -1323,7 +1323,7 @@ For param denes matrix ``y``, data layouts is shown below:
 | ``y``) is                  |         |                               |
 +----------------------------+---------+-------------------------------+
 
-5. level1 Vector operation
+level1 Vector operation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 alphasparse_axpy
