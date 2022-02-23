@@ -20,8 +20,8 @@ is executed successfully, as shown below:
 +--------------------------------+-------------------------------------+
 | return value                   | Return value meaning                |
 +================================+=====================================+
-| `                              | Successful operation                |
-| `ALPHA_SPARSE_STATUS_SUCCESS`` |                                     |
+|                                | Successful operation                |
+| ``ALPHA_SPARSE_STATUS_SUCCESS``|                                     |
 +--------------------------------+-------------------------------------+
 | ``ALPHA_S                      | The matrix is not initialized       |
 | PARSE_STATUS_NOT_INITIALIZED`` |                                     |

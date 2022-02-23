@@ -8,7 +8,7 @@ Welcome to AlphaSparse's documentation!
 
 .. toctree::
    :numbered:
-   :maxdepth: 2
+   :maxdepth: 4
    :caption: Contents:
 
    interface
