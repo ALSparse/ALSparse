@@ -10,6 +10,8 @@ Welcome to AlphaSparse's documentation!
    :numbered:
    :maxdepth: 2
    :caption: Contents:
+
+   interface
    
 Indices and tables
 ==================
