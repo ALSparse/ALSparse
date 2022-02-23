@@ -7,7 +7,7 @@
 AlphaSparse Documentation
 ###########################
 
-This is a list of API functions provided by rocSPARSE.
+This is a list of API functions provided by AlphaSparse.
 
 .. toctree::
    :maxdepth: 4
