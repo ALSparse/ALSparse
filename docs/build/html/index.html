@@ -1,0 +1,303 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>AlphaSparse Documentation &mdash; AlphaSparse 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="AlphaSparse documentation" href="interface.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="#" class="icon icon-home"> AlphaSparse
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="interface.html">AlphaSparse documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">AlphaSparse</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#">Docs</a> &raquo;</li>
+        
+      <li>AlphaSparse Documentation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="alphasparse-documentation">
+<h1>AlphaSparse Documentation<a class="headerlink" href="#alphasparse-documentation" title="Permalink to this headline">¶</a></h1>
+<p>This is a list of API functions provided by AlphaSparse.</p>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="interface.html">AlphaSparse documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="interface.html#general">GENERAL</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="interface.html#function-return-value">Function return value</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interface.html#basic-operations-of-sparse-matrix">Basic operations of sparse matrix</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="interface.html#alphasparse-create-coo">alphasparse_create_coo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="interface.html#alphasparse-create-csc">alphasparse_create_csc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="interface.html#alphasparse-create-csr">alphasparse_create_csr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="interface.html#alphasparse-create-bsr">alphasparse_create_bsr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="interface.html#alphasparse-convert-csr">alphasparse_convert_csr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="interface.html#alphasparse-convert-csc">alphasparse_convert_csc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="interface.html#alphasparse-convert-sky">alphasparse_convert_sky</a></li>
+<li class="toctree-l4"><a class="reference internal" href="interface.html#alphasparse-convert-dia">alphasparse_convert_dia</a></li>
+<li class="toctree-l4"><a class="reference internal" href="interface.html#alphasparse-convert-bsr">alphasparse_convert_bsr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="interface.html#alphasparse-convert-csc-1">alphasparse_convert_csc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="interface.html#alphasparse-export-csr">alphasparse_export_csr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="interface.html#alphasparse-export-bsr">alphasparse_export_bsr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="interface.html#alphasparse-export-coo">alphasparse_export_coo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="interface.html#alphasparse-destroy">alphasparse_destroy</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="interface.html#cpu-backend">CPU backend</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="interface.html#multiplying-sparse-matrix-and-dense-vector">Multiplying sparse matrix and dense vector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interface.html#multiplying-sparse-matrix-and-dense-matrix">Multiplying sparse matrix and dense matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interface.html#sparse-matrix-and-sparse-matrix-multiplication">Sparse matrix and sparse matrix multiplication</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="interface.html#alphasparse-spmmd">3.1 alphasparse_spmmd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="interface.html#alphasparse-spmm">3.2 alphasparse_spmm</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="interface.html#solving-linear-equations">Solving linear equations</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="interface.html#alphasparse-trsv">4.1 alphasparse_trsv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="interface.html#alphasparse-trsm">4.2 alphasparse_trsm</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="interface.html#level1-vector-operation">level1 Vector operation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="interface.html#alphasparse-axpy">alphasparse_axpy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="interface.html#alphasparse-gthr">alphasparse_gthr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="interface.html#alphasparse-gthrz">alphasparse_gthrz</a></li>
+<li class="toctree-l4"><a class="reference internal" href="interface.html#alphasparse-rot">alphasparse_rot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="interface.html#alphasparse-sctr">alphasparse_sctr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="interface.html#alphasparse-doti">alphasparse_doti</a></li>
+<li class="toctree-l4"><a class="reference internal" href="interface.html#alphasparse-dotci-sub">alphasparse_dotci_sub</a></li>
+<li class="toctree-l4"><a class="reference internal" href="interface.html#alphasparse-dotui-sub">alphasparse_dotui_sub</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="interface.html#dcu-backend">DCU backend</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="interface.html#sparse-level1-functions">Sparse Level1 Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="interface.html#alphasparse-dcu-axpyi">alphasparse_dcu_axpyi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="interface.html#alphasparse-dcu-doti">alphasparse_dcu_doti</a></li>
+<li class="toctree-l4"><a class="reference internal" href="interface.html#alphasparse-dcu-dotci">alphasparse_dcu_dotci</a></li>
+<li class="toctree-l4"><a class="reference internal" href="interface.html#alphasparse-dcu-gthr">alphasparse_dcu_gthr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="interface.html#alphasparse-dcu-gthrz">alphasparse_dcu_gthrz</a></li>
+<li class="toctree-l4"><a class="reference internal" href="interface.html#alphasparse-dcu-roti">alphasparse_dcu_roti</a></li>
+<li class="toctree-l4"><a class="reference internal" href="interface.html#alphasparse-dcu-sctr">alphasparse_dcu_sctr</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="interface.html#sparse-level-2-functions">Sparse Level 2 Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="interface.html#alphasparse-dcu-csrmv">alphasparse_dcu_csrmv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="interface.html#alphasparse-dcu-coomv">alphasparse_dcu_coomv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="interface.html#alphasparse-dcu-ellmv">alphasparse_dcu_ellmv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="interface.html#alphasparse-dcu-bsrmv">alphasparse_dcu_bsrmv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="interface.html#alphasparse-dcu-hybmv">alphasparse_dcu_hybmv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="interface.html#alphasparse-dcu-csrsv">alphasparse_dcu_csrsv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="interface.html#alphasparse-dcu-bsrsv">alphasparse_dcu_bsrsv</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="interface.html#sparse-level3-functions">Sparse Level3 Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="interface.html#alphasparse-dcu-csrmm">alphasparse_dcu_csrmm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="interface.html#alphasparse-dcu-bsrmm">alphasparse_dcu_bsrmm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="interface.html#alphasparse-dcu-csrsm-solve">alphasparse_dcu_csrsm_solve</a></li>
+<li class="toctree-l4"><a class="reference internal" href="interface.html#alphasparse-dcu-gemmi">alphasparse_dcu_gemmi</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="interface.html#sparse-extra-functions">Sparse Extra Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="interface.html#alphasparse-dcu-csrgeam-nnz">alphasparse_dcu_csrgeam_nnz</a></li>
+<li class="toctree-l4"><a class="reference internal" href="interface.html#alphasparse-dcu-csrgeam">alphasparse_dcu_csrgeam</a></li>
+<li class="toctree-l4"><a class="reference internal" href="interface.html#alphasparse-dcu-csrgemm-nnz">alphasparse_dcu_csrgemm_nnz</a></li>
+<li class="toctree-l4"><a class="reference internal" href="interface.html#alphasparse-dcu-csrgemm">alphasparse_dcu_csrgemm</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<section id="indices-and-tables">
+<h2>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="interface.html" class="btn btn-neutral float-right" title="AlphaSparse documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2022, NCIC-AlphaSparse
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
