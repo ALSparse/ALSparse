@@ -6,7 +6,7 @@ It is primarily constrcuted with few dependencies on third-party library and ver
 
 # Documentation
 
-The latest AlphaSparse documentation and API description can be found [here][ ] or downloaded as [pdf][].
+The latest AlphaSparse documentation and API description can be found [here][https://alphasparse.github.io/AlphaSparse/build/html/index.html].
 
 # Supported Backends
 
@@ -96,6 +96,5 @@ More options are listed in AlphaSparse/src/util/args.c
 ```
 
 # License
-
 The LICENSE file can be found in the main repository.
 
