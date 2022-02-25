@@ -6,7 +6,7 @@ It is primarily constrcuted with few dependencies on third-party library and ver
 
 # Documentation
 
-The latest AlphaSparse documentation and API description can be found [here][https://alphasparse.github.io/AlphaSparse/build/html/index.html].
+The latest AlphaSparse documentation and API description can be found [here](https://alphasparse.github.io/AlphaSparse/build/html/index.html).
 
 # Supported Backends
 
@@ -17,7 +17,7 @@ AlphaSparse supports multiple CPU hardware platforms. Since it's written in C/C+
 Up to now, the fast kernels are verified on:
 
 - Hygon 1st gen CPU (**Zen1** based)
-- Kunpeng 6148 CPU(**Taishan** based)
+- Kunpeng 920 CPU(**Taishan** based)
 
 ## GPU side
 
@@ -45,7 +45,7 @@ For DCU users, ROCm environment is compulsive.
 
 On CPU side , the correctness check of fast kernels are done by comparing to plain kernels. On x86_64 platform, mkl can take the place of the plain kernels.
 
-On dcu side, rocSparse can be used to perform the corretness check.
+On DCU side, rocSparse can be used to perform the corretness check.
 
 # Quickstart
 
@@ -63,8 +63,6 @@ cd AlphaSparse
 # Build
 PLAIN_ON=1 HIP_ON=0 HYGON_ON=0 make -j
 
-# Install
-make install
 ```
 
 Set `HIP_ON=1` if you want to build the DCU kernels, set `ARM_ON=1`  for arm kernels , and set `HYGON_ON=1`  for hygon cpu kernels.
