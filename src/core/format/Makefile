@@ -6,4 +6,8 @@ vpath %.c $(SRC_DIR)
 SRC = $(foreach d,$(SRC_DIR), $(wildcard $(d)/*.c) )
 SRCCPP = $(foreach d,$(SRC_DIR), $(wildcard $(d)/*.cpp) )
 
+ifeq ($(HIP_ON),1)
+SRCCPP = $(foreach d,$(SRC_DIR), $(wildcard $(d)/*.cpp) )
+endif
+
 include $(ROOT)/Makefile.tail
