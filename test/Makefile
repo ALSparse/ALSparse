@@ -10,7 +10,7 @@ ifeq ($(ARM_ON),1)
 SUBDIRS += arm
 endif
 ifeq ($(HYGON_ON),1)
-SUBDIRS += hygon
+SUBDIRS += x86_64
 endif
 
 ifeq ($(PLAIN_ON),1)
