@@ -21,7 +21,7 @@ Up to now, the fast kernels are verified on:
 
 ## GPU side
 
-AlphaSparse supports DCU platform(By Hygon) which is compatible with **HIP**.
+AlphaSparse supports Deep Computing Unit platform (DCU, By Hygon) which is compatible with **HIP**. 
 
 GPU kernels are supported on:
 
