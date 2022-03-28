@@ -1,70 +1,34 @@
-
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AlphaSparse documentation &mdash; AlphaSparse 1.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
-
-  
-  
-  
-  
-
-  
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-
-    
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="prev" title="AlphaSparse Documentation" href="index.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="index.html" class="icon icon-home"> AlphaSparse
-          
-
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -72,17 +36,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">AlphaSparse documentation</a><ul>
@@ -174,70 +128,32 @@
 </li>
 </ul>
 
-            
-          
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">AlphaSparse</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="index.html">Docs</a> &raquo;</li>
-        
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
       <li>AlphaSparse documentation</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-            
             <a href="_sources/interface.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <section id="alphasparse-documentation">
-<h1>AlphaSparse documentation<a class="headerlink" href="#alphasparse-documentation" title="Permalink to this headline">¶</a></h1>
+<h1>AlphaSparse documentation<a class="headerlink" href="#alphasparse-documentation" title="Permalink to this headline"></a></h1>
 <p>This document provides a detailed stage function interface description
 of the AlphaSparse sparse matrix algorithm library, including mv, mm and
 spmmd, etc. The function will perform the corresponding algorithm
@@ -245,15 +161,15 @@ processing according to the sparse matrix format. The specific format of
 the sparse matrix will not be reflected in the interface name and the
 reception parameters.</p>
 <section id="general">
-<h2>GENERAL<a class="headerlink" href="#general" title="Permalink to this headline">¶</a></h2>
+<h2>GENERAL<a class="headerlink" href="#general" title="Permalink to this headline"></a></h2>
 <section id="function-return-value">
-<h3>Function return value<a class="headerlink" href="#function-return-value" title="Permalink to this headline">¶</a></h3>
+<h3>Function return value<a class="headerlink" href="#function-return-value" title="Permalink to this headline"></a></h3>
 <p>The function has several return values, indicating whether the function
 is executed successfully, as shown below:</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 46%" />
-<col style="width: 54%" />
+<col style="width: 47%" />
+<col style="width: 53%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>return value</p></th>
@@ -264,42 +180,34 @@ is executed successfully, as shown below:</p>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ALPHA_SPARSE_STATUS_SUCCESS</span></code></p></td>
 <td><p>Successful operation</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ALPHA_S</span>
-<span class="pre">PARSE_STATUS_NOT_INITIALIZED</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ALPHA_SPARSE_STATUS_NOT_INITIALIZED</span></code></p></td>
 <td><p>The matrix is not initialized</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ALPH</span>
-<span class="pre">A_SPARSE_STATUS_ALLOC_FAILED</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ALPHA_SPARSE_STATUS_ALLOC_FAILED</span></code></p></td>
 <td><p>Internal space allocation failed</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ALPHA</span>
-<span class="pre">_SPARSE_STATUS_INVALID_VALUE</span></code></p></td>
-<td><p>The input parameter contains an
-illegal value</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ALPHA_SPARSE_STATUS_INVALID_VALUE</span></code></p></td>
+<td><p>The input parameter contains an illegal value</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ALPHA_SP</span>
-<span class="pre">ARSE_STATUS_EXECUTION_FAILED</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ALPHA_SPARSE_STATUS_EXECUTION_FAILED</span></code></p></td>
 <td><p>Execution failed</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ALPHA_</span>
-<span class="pre">SPARSE_STATUS_INTERNAL_ERROR</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ALPHA_SPARSE_STATUS_INTERNAL_ERROR</span></code></p></td>
 <td><p>Algorithm implementation error</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ALPHA</span>
-<span class="pre">_SPARSE_STATUS_NOT_SUPPORTED</span></code></p></td>
-<td><p>The requested operation cannot be
-supported</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ALPHA_SPARSE_STATUS_NOT_SUPPORTED</span></code></p></td>
+<td><p>The requested operation cannot be supported</p></td>
 </tr>
 </tbody>
 </table>
 </section>
 <section id="basic-operations-of-sparse-matrix">
-<h3>Basic operations of sparse matrix<a class="headerlink" href="#basic-operations-of-sparse-matrix" title="Permalink to this headline">¶</a></h3>
+<h3>Basic operations of sparse matrix<a class="headerlink" href="#basic-operations-of-sparse-matrix" title="Permalink to this headline"></a></h3>
 <p>Algorithm library currently supports the direct creation of CSR, COO,
 CSC and BSR sparse matrix format, and conversion from COO to CSR, CSC,
 BSR, DIA and SKY, the interface supports four data formats.</p>
 <section id="alphasparse-create-coo">
-<h4>alphasparse_create_coo<a class="headerlink" href="#alphasparse-create-coo" title="Permalink to this headline">¶</a></h4>
+<h4>alphasparse_create_coo<a class="headerlink" href="#alphasparse-create-coo" title="Permalink to this headline"></a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">alphasparse_status_t</span><span class="w"> </span><span class="n">alphasparse_</span><span class="o">?</span><span class="n">_create_coo</span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="n">alphasparse_matrix_t</span><span class="w"> </span><span class="o">*</span><span class="n">A</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">alphasparse_index_base_t</span><span class="w"> </span><span class="n">indexing</span><span class="p">,</span><span class="w"></span>
@@ -319,14 +227,13 @@ corresponds to double, and <code class="docutils literal notranslate"><span clas
 single-precision complex number, <code class="docutils literal notranslate"><span class="pre">z</span></code>corresponds to double complex,
 that is double-precision complex number, other parameters are shown
 below:</p>
-<table class="docutils align-default">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 80%" />
+<col style="width: 40%" />
+<col style="width: 60%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p>Input
-parameters</p></th>
+<tr class="row-odd"><th class="head"><p>Input Parameters</p></th>
 <th class="head"><p>Description</p></th>
 </tr>
 </thead>
@@ -335,39 +242,34 @@ parameters</p></th>
 <td><p>COO format</p></td>
 </tr>
 <tr class="row-odd"><td><p>indexing</p></td>
-<td><p>Indicates the addressing mode of the input
-array,There are the following
-options:<code class="docutils literal notranslate"><span class="pre">ALPHA_SPARSE_INDEX_BASE_ZERO</span></code>, Based on
-0 addressing, index starts with
-0<code class="docutils literal notranslate"><span class="pre">ALPHA_SPARSE_INDEX_BASE_ONE</span></code>, Based on 1
-addressing, index starts with 1</p></td>
+<td><p>Following options are uesd to indicate the addressing mode of the input array.
+<code class="docutils literal notranslate"><span class="pre">ALPHA_SPARSE_INDEX_BASE_ZERO</span></code>, Based on 0 addressing, index starts with 0.
+<code class="docutils literal notranslate"><span class="pre">ALPHA_SPARSE_INDEX_BASE_ONE</span></code>, Based on 1 addressing, index starts with 1.
+&lt;div style=”line-height: 0; padding: 0; margin: 0”&gt;&lt;/div&gt;</p></td>
 </tr>
 <tr class="row-even"><td><p>rows</p></td>
 <td><p>Number of rows of matrix <code class="docutils literal notranslate"><span class="pre">A</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p>cos</p></td>
+<tr class="row-odd"><td><p>cols</p></td>
 <td><p>Number of columns of matrix <code class="docutils literal notranslate"><span class="pre">A</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p>nnz</p></td>
 <td><p>The number of non-zero elements of matrix <code class="docutils literal notranslate"><span class="pre">A</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p>row_indx</p></td>
-<td><p>The row coordinate index of each non-zero element,
-the length is <code class="docutils literal notranslate"><span class="pre">nnz</span></code></p></td>
+<td><p>The row coordinate index of each non-zero element, the length is <code class="docutils literal notranslate"><span class="pre">nnz</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p>col_indx</p></td>
-<td><p>The column coordinate index of each non-zero element,
-the length is <code class="docutils literal notranslate"><span class="pre">nnz</span></code></p></td>
+<td><p>The column coordinate index of each non-zero element, the length is <code class="docutils literal notranslate"><span class="pre">nnz</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p>values</p></td>
-<td><p>Store the values of non-zero elements in matrix <code class="docutils literal notranslate"><span class="pre">A</span></code>
-in any order, with a length of <code class="docutils literal notranslate"><span class="pre">nnz</span></code></p></td>
+<td><p>Store the values of non-zero elements in matrix <code class="docutils literal notranslate"><span class="pre">A</span></code> in any order, with a length of <code class="docutils literal notranslate"><span class="pre">nnz</span></code></p></td>
 </tr>
 </tbody>
 </table>
 </section>
 <section id="alphasparse-create-csc">
-<h4>alphasparse_create_csc<a class="headerlink" href="#alphasparse-create-csc" title="Permalink to this headline">¶</a></h4>
+<h4>alphasparse_create_csc<a class="headerlink" href="#alphasparse-create-csc" title="Permalink to this headline"></a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">alphasparse_status_t</span><span class="w"> </span><span class="n">alphasparse_</span><span class="o">?</span><span class="n">_create_csc</span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="n">alphasparse_matrix_t</span><span class="w"> </span><span class="o">*</span><span class="n">A</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">alphasparse_index_base_t</span><span class="w"> </span><span class="n">indexing</span><span class="p">,</span><span class="w"></span>
@@ -450,7 +352,7 @@ is 1</p></td>
 </table>
 </section>
 <section id="alphasparse-create-csr">
-<h4>alphasparse_create_csr<a class="headerlink" href="#alphasparse-create-csr" title="Permalink to this headline">¶</a></h4>
+<h4>alphasparse_create_csr<a class="headerlink" href="#alphasparse-create-csr" title="Permalink to this headline"></a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">alphasparse_status_t</span><span class="w"> </span><span class="n">alphasparse_</span><span class="o">?</span><span class="n">_create_csr</span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="n">alphasparse_matrix_t</span><span class="w"> </span><span class="o">*</span><span class="n">A</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">alphasparse_index_base_t</span><span class="w"> </span><span class="n">indexing</span><span class="p">,</span><span class="w"></span>
@@ -533,7 +435,7 @@ A, the length is equal to the length of <code class="docutils literal notranslat
 </table>
 </section>
 <section id="alphasparse-create-bsr">
-<h4>alphasparse_create_bsr<a class="headerlink" href="#alphasparse-create-bsr" title="Permalink to this headline">¶</a></h4>
+<h4>alphasparse_create_bsr<a class="headerlink" href="#alphasparse-create-bsr" title="Permalink to this headline"></a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">alphasparse_status_t</span><span class="w"> </span><span class="n">alphasparse_</span><span class="o">?</span><span class="n">_create_bsr</span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="n">alphasparse_matrix_t</span><span class="w"> </span><span class="o">*</span><span class="n">A</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">alphasparse_index_base_t</span><span class="w"> </span><span class="n">indexing</span><span class="p">,</span><span class="w"></span>
@@ -634,7 +536,7 @@ quite</p></td>
 </table>
 </section>
 <section id="alphasparse-convert-csr">
-<h4>alphasparse_convert_csr<a class="headerlink" href="#alphasparse-convert-csr" title="Permalink to this headline">¶</a></h4>
+<h4>alphasparse_convert_csr<a class="headerlink" href="#alphasparse-convert-csr" title="Permalink to this headline"></a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">alphasparse_status_t</span><span class="w"> </span><span class="n">alphasparse_convert_csr</span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">alphasparse_matrix_t</span><span class="w"> </span><span class="n">source</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">alphasparse_operation_t</span><span class="w"> </span><span class="n">operation</span><span class="p">,</span><span class="w"></span>
@@ -675,7 +577,7 @@ transpose, <code class="docutils literal notranslate"><span class="pre">op(A)</s
 </table>
 </section>
 <section id="alphasparse-convert-csc">
-<h4>alphasparse_convert_csc<a class="headerlink" href="#alphasparse-convert-csc" title="Permalink to this headline">¶</a></h4>
+<h4>alphasparse_convert_csc<a class="headerlink" href="#alphasparse-convert-csc" title="Permalink to this headline"></a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">alphasparse_status_t</span><span class="w"> </span><span class="n">alphasparse_convert_csc</span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">alphasparse_matrix_t</span><span class="w"> </span><span class="n">source</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">alphasparse_operation_t</span><span class="w"> </span><span class="n">operation</span><span class="p">,</span><span class="w"></span>
@@ -716,7 +618,7 @@ transpose, <code class="docutils literal notranslate"><span class="pre">op(A)</s
 </table>
 </section>
 <section id="alphasparse-convert-sky">
-<h4>alphasparse_convert_sky<a class="headerlink" href="#alphasparse-convert-sky" title="Permalink to this headline">¶</a></h4>
+<h4>alphasparse_convert_sky<a class="headerlink" href="#alphasparse-convert-sky" title="Permalink to this headline"></a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">alphasparse_status_t</span><span class="w"> </span><span class="n">alphasparse_convert_sky</span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">alphasparse_matrix_t</span><span class="w"> </span><span class="n">source</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">alphasparse_operation_t</span><span class="w"> </span><span class="n">operation</span><span class="p">,</span><span class="w"></span>
@@ -757,7 +659,7 @@ transpose, <code class="docutils literal notranslate"><span class="pre">op(A)</s
 </table>
 </section>
 <section id="alphasparse-convert-dia">
-<h4>alphasparse_convert_dia<a class="headerlink" href="#alphasparse-convert-dia" title="Permalink to this headline">¶</a></h4>
+<h4>alphasparse_convert_dia<a class="headerlink" href="#alphasparse-convert-dia" title="Permalink to this headline"></a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">alphasparse_status_t</span><span class="w"> </span><span class="n">alphasparse_convert_dia</span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">alphasparse_matrix_t</span><span class="w"> </span><span class="n">source</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">alphasparse_operation_t</span><span class="w"> </span><span class="n">operation</span><span class="p">,</span><span class="w"></span>
@@ -798,7 +700,7 @@ transpose, <code class="docutils literal notranslate"><span class="pre">op(A)</s
 </table>
 </section>
 <section id="alphasparse-convert-bsr">
-<h4>alphasparse_convert_bsr<a class="headerlink" href="#alphasparse-convert-bsr" title="Permalink to this headline">¶</a></h4>
+<h4>alphasparse_convert_bsr<a class="headerlink" href="#alphasparse-convert-bsr" title="Permalink to this headline"></a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">alphasparse_status_t</span><span class="w"> </span><span class="n">alphasparse_convert_bsr</span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">alphasparse_matrix_t</span><span class="w"> </span><span class="n">source</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">alphasparse_operation_t</span><span class="w"> </span><span class="n">operation</span><span class="p">,</span><span class="w"></span>
@@ -839,7 +741,7 @@ transpose, <code class="docutils literal notranslate"><span class="pre">op(A)</s
 </table>
 </section>
 <section id="alphasparse-convert-csc-1">
-<span id="id1"></span><h4>alphasparse_convert_csc<a class="headerlink" href="#alphasparse-convert-csc-1" title="Permalink to this headline">¶</a></h4>
+<span id="id1"></span><h4>alphasparse_convert_csc<a class="headerlink" href="#alphasparse-convert-csc-1" title="Permalink to this headline"></a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">alphasparse_status_t</span><span class="w"> </span><span class="n">alphasparse_</span><span class="o">?</span><span class="n">_export_csc</span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="n">alphasparse_matrix_t</span><span class="w"> </span><span class="n">source</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="n">alphasparse_index_base_t</span><span class="w"> </span><span class="o">*</span><span class="n">indexing</span><span class="p">,</span><span class="w"></span>
@@ -922,7 +824,7 @@ the length is equivalent to the length of
 </table>
 </section>
 <section id="alphasparse-export-csr">
-<h4>alphasparse_export_csr<a class="headerlink" href="#alphasparse-export-csr" title="Permalink to this headline">¶</a></h4>
+<h4>alphasparse_export_csr<a class="headerlink" href="#alphasparse-export-csr" title="Permalink to this headline"></a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">alphasparse_status_t</span><span class="w"> </span><span class="n">alphasparse_</span><span class="o">?</span><span class="n">_export_csr</span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="n">alphasparse_matrix_t</span><span class="w"> </span><span class="n">source</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">alphasparse_index_base_t</span><span class="w"> </span><span class="o">*</span><span class="n">indexing</span><span class="p">,</span><span class="w"></span>
@@ -1004,7 +906,7 @@ the length is equivalent to the length of row_indx</p></td>
 </table>
 </section>
 <section id="alphasparse-export-bsr">
-<h4>alphasparse_export_bsr<a class="headerlink" href="#alphasparse-export-bsr" title="Permalink to this headline">¶</a></h4>
+<h4>alphasparse_export_bsr<a class="headerlink" href="#alphasparse-export-bsr" title="Permalink to this headline"></a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">alphasparse_status_t</span><span class="w"> </span><span class="n">alphasparse_</span><span class="o">?</span><span class="n">_export_bsr</span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="n">alphasparse_matrix_t</span><span class="w"> </span><span class="n">source</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="n">alphasparse_index_base_t</span><span class="w"> </span><span class="o">*</span><span class="n">indexing</span><span class="p">,</span><span class="w"></span>
@@ -1102,7 +1004,7 @@ length is <code class="docutils literal notranslate"><span class="pre">col_indx*
 </table>
 </section>
 <section id="alphasparse-export-coo">
-<h4>alphasparse_export_coo<a class="headerlink" href="#alphasparse-export-coo" title="Permalink to this headline">¶</a></h4>
+<h4>alphasparse_export_coo<a class="headerlink" href="#alphasparse-export-coo" title="Permalink to this headline"></a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">alphasparse_status_t</span><span class="w"> </span><span class="n">alphasparse_</span><span class="o">?</span><span class="n">_export_coo</span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="n">alphasparse_matrix_t</span><span class="w"> </span><span class="n">source</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="n">alphasparse_index_base_t</span><span class="w"> </span><span class="o">*</span><span class="n">indexing</span><span class="p">,</span><span class="w"></span>
@@ -1169,7 +1071,7 @@ in any order, with a length of <code class="docutils literal notranslate"><span 
 </table>
 </section>
 <section id="alphasparse-destroy">
-<h4>alphasparse_destroy<a class="headerlink" href="#alphasparse-destroy" title="Permalink to this headline">¶</a></h4>
+<h4>alphasparse_destroy<a class="headerlink" href="#alphasparse-destroy" title="Permalink to this headline"></a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">alphasparse_status_t</span><span class="w"> </span><span class="n">alphasparse_destroy</span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="n">alphasparse_matrix_t</span><span class="w"> </span><span class="n">A</span><span class="p">)</span><span class="w"></span>
 </pre></div>
@@ -1182,14 +1084,14 @@ sparse matrix.</p>
 </section>
 </section>
 <section id="cpu-backend">
-<h2>CPU backend<a class="headerlink" href="#cpu-backend" title="Permalink to this headline">¶</a></h2>
+<h2>CPU backend<a class="headerlink" href="#cpu-backend" title="Permalink to this headline"></a></h2>
 <section id="multiplying-sparse-matrix-and-dense-vector">
-<h3>Multiplying sparse matrix and dense vector<a class="headerlink" href="#multiplying-sparse-matrix-and-dense-vector" title="Permalink to this headline">¶</a></h3>
+<h3>Multiplying sparse matrix and dense vector<a class="headerlink" href="#multiplying-sparse-matrix-and-dense-vector" title="Permalink to this headline"></a></h3>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">alphasparse_status_t</span><span class="w"> </span><span class="n">alphasparse_</span><span class="o">?</span><span class="n">_mv</span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">alphasparse_operation_t</span><span class="w"> </span><span class="n">operation</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">ALPHA_Number</span><span class="w"> </span><span class="n">alpha</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">alphasparse_matrix_t</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">struct</span> <span class="nc">AlphaSparse_matrix_descr</span><span class="w"> </span><span class="n">descr</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">AlphaSparse_matrix_descr</span><span class="w"> </span><span class="n">descr</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">ALPHA_Number</span><span class="w"> </span><span class="o">*</span><span class="n">x</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">ALPHA_Number</span><span class="w"> </span><span class="n">beta</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="n">ALPHA_Number</span><span class="w"> </span><span class="o">*</span><span class="n">y</span><span class="p">)</span><span class="w"></span>
@@ -1289,12 +1191,12 @@ length is at least the number of rows of matrix <code class="docutils literal no
 </table>
 </section>
 <section id="multiplying-sparse-matrix-and-dense-matrix">
-<h3>Multiplying sparse matrix and dense matrix<a class="headerlink" href="#multiplying-sparse-matrix-and-dense-matrix" title="Permalink to this headline">¶</a></h3>
+<h3>Multiplying sparse matrix and dense matrix<a class="headerlink" href="#multiplying-sparse-matrix-and-dense-matrix" title="Permalink to this headline"></a></h3>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">alphasparse_status_t</span><span class="w"> </span><span class="n">alphasparse_</span><span class="o">?</span><span class="n">_mm</span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">alphasparse_operation_t</span><span class="w"> </span><span class="n">operation</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">ALPHA_Number</span><span class="w"> </span><span class="n">alpha</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">alphasparse_matrix_t</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">struct</span> <span class="nc">AlphaSparse_matrix_descr</span><span class="w"> </span><span class="n">descr</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">AlphaSparse_matrix_descr</span><span class="w"> </span><span class="n">descr</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">alphasparse_layout_t</span><span class="w"> </span><span class="n">layout</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">ALPHA_Number</span><span class="w"> </span><span class="o">*</span><span class="n">x</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">ALPHA_INT</span><span class="w"> </span><span class="n">columns</span><span class="p">,</span><span class="w"></span>
@@ -1478,11 +1380,11 @@ of columns of matrix
 </table>
 </section>
 <section id="sparse-matrix-and-sparse-matrix-multiplication">
-<h3>Sparse matrix and sparse matrix multiplication<a class="headerlink" href="#sparse-matrix-and-sparse-matrix-multiplication" title="Permalink to this headline">¶</a></h3>
+<h3>Sparse matrix and sparse matrix multiplication<a class="headerlink" href="#sparse-matrix-and-sparse-matrix-multiplication" title="Permalink to this headline"></a></h3>
 <p>The functions are divided into two categories according to the different
 output results:</p>
 <section id="alphasparse-spmmd">
-<h4>3.1 alphasparse_spmmd<a class="headerlink" href="#alphasparse-spmmd" title="Permalink to this headline">¶</a></h4>
+<h4>3.1 alphasparse_spmmd<a class="headerlink" href="#alphasparse-spmmd" title="Permalink to this headline"></a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">alphasparse_status_t</span><span class="w"> </span><span class="n">alphasparse_</span><span class="o">?</span><span class="n">_spmmd</span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">alphasparse_operation_t</span><span class="w"> </span><span class="n">operation</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">alphasparse_matrix_t</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"></span>
@@ -1549,7 +1451,7 @@ design</p></td>
 </table>
 </section>
 <section id="alphasparse-spmm">
-<h4>3.2 alphasparse_spmm<a class="headerlink" href="#alphasparse-spmm" title="Permalink to this headline">¶</a></h4>
+<h4>3.2 alphasparse_spmm<a class="headerlink" href="#alphasparse-spmm" title="Permalink to this headline"></a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">alphasparse_status_t</span><span class="w"> </span><span class="n">alphasparse_</span><span class="o">?</span><span class="n">_spmm</span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">alphasparse_operation_t</span><span class="w"> </span><span class="n">operation</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">alphasparse_matrix_t</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"></span>
@@ -1606,15 +1508,15 @@ Conjugation Transpose, <code class="docutils literal notranslate"><span class="p
 </section>
 </section>
 <section id="solving-linear-equations">
-<h3>Solving linear equations<a class="headerlink" href="#solving-linear-equations" title="Permalink to this headline">¶</a></h3>
+<h3>Solving linear equations<a class="headerlink" href="#solving-linear-equations" title="Permalink to this headline"></a></h3>
 <section id="alphasparse-trsv">
-<h4>4.1 alphasparse_trsv<a class="headerlink" href="#alphasparse-trsv" title="Permalink to this headline">¶</a></h4>
+<h4>4.1 alphasparse_trsv<a class="headerlink" href="#alphasparse-trsv" title="Permalink to this headline"></a></h4>
 <p>Equations for multiplying a sparse matrix and a dense vector:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">alphasparse_status_t</span><span class="w"> </span><span class="n">alphasparse_</span><span class="o">?</span><span class="n">_trsv</span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">alphasparse_operation_t</span><span class="w"> </span><span class="n">operation</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">ALPHA_Number</span><span class="w"> </span><span class="n">alpha</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">alphasparse_matrix_t</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">struct</span> <span class="nc">AlphaSparse_matrix_descr</span><span class="w"> </span><span class="n">descr</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">AlphaSparse_matrix_descr</span><span class="w"> </span><span class="n">descr</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">ALPHA_Number</span><span class="w"> </span><span class="o">*</span><span class="n">x</span><span class="p">,</span><span class="n">ALPHA_Number</span><span class="w"> </span><span class="o">*</span><span class="n">y</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
@@ -1700,14 +1602,14 @@ are all equal to 1</p></td>
 </table>
 </section>
 <section id="alphasparse-trsm">
-<h4>4.2 alphasparse_trsm<a class="headerlink" href="#alphasparse-trsm" title="Permalink to this headline">¶</a></h4>
+<h4>4.2 alphasparse_trsm<a class="headerlink" href="#alphasparse-trsm" title="Permalink to this headline"></a></h4>
 <p>A system of equations for multiplying a sparse matrix and a dense
 matrix:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">alphasparse_status_t</span><span class="w"> </span><span class="n">alphasparse_</span><span class="o">?</span><span class="n">_trsm</span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">alphasparse_operation_t</span><span class="w"> </span><span class="n">operation</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">ALPHA_Number</span><span class="w"> </span><span class="n">alpha</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">alphasparse_matrix_t</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">struct</span> <span class="nc">AlphaSparse_matrix_descr</span><span class="w"> </span><span class="n">descr</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">AlphaSparse_matrix_descr</span><span class="w"> </span><span class="n">descr</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">alphasparse_layout_t</span><span class="w"> </span><span class="n">layout</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">ALPHA_Number</span><span class="w"> </span><span class="o">*</span><span class="n">x</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">ALPHA_INT</span><span class="w"> </span><span class="n">columns</span><span class="p">,</span><span class="w"></span>
@@ -1887,9 +1789,9 @@ of columns of matrix
 </section>
 </section>
 <section id="level1-vector-operation">
-<h3>level1 Vector operation<a class="headerlink" href="#level1-vector-operation" title="Permalink to this headline">¶</a></h3>
+<h3>level1 Vector operation<a class="headerlink" href="#level1-vector-operation" title="Permalink to this headline"></a></h3>
 <section id="alphasparse-axpy">
-<h4>alphasparse_axpy<a class="headerlink" href="#alphasparse-axpy" title="Permalink to this headline">¶</a></h4>
+<h4>alphasparse_axpy<a class="headerlink" href="#alphasparse-axpy" title="Permalink to this headline"></a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">alphasparse_status_t</span><span class="w"> </span><span class="n">alphasparse_</span><span class="o">?</span><span class="n">_axpy</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">ALPHA_INT</span><span class="w"> </span><span class="n">nz</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">ALPHA_Number</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"></span>
@@ -1943,7 +1845,7 @@ an array, The length is at least <code class="docutils literal notranslate"><spa
 </table>
 </section>
 <section id="alphasparse-gthr">
-<h4>alphasparse_gthr<a class="headerlink" href="#alphasparse-gthr" title="Permalink to this headline">¶</a></h4>
+<h4>alphasparse_gthr<a class="headerlink" href="#alphasparse-gthr" title="Permalink to this headline"></a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">alphasparse_status_t</span><span class="w"> </span><span class="n">alphasparse_</span><span class="o">?</span><span class="n">_gthr</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">ALPHA_INT</span><span class="w"> </span><span class="n">nz</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">ALPHA_Number</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"></span>
@@ -1993,7 +1895,7 @@ an array, The length is at least <code class="docutils literal notranslate"><spa
 </table>
 </section>
 <section id="alphasparse-gthrz">
-<h4>alphasparse_gthrz<a class="headerlink" href="#alphasparse-gthrz" title="Permalink to this headline">¶</a></h4>
+<h4>alphasparse_gthrz<a class="headerlink" href="#alphasparse-gthrz" title="Permalink to this headline"></a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">alphasparse_status_t</span><span class="w"> </span><span class="n">alphasparse_</span><span class="o">?</span><span class="n">_gthrz</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">ALPHA_INT</span><span class="w"> </span><span class="n">nz</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="n">ALPHA_Number</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"></span>
@@ -2044,7 +1946,7 @@ an array, The length is at least <code class="docutils literal notranslate"><spa
 </table>
 </section>
 <section id="alphasparse-rot">
-<h4>alphasparse_rot<a class="headerlink" href="#alphasparse-rot" title="Permalink to this headline">¶</a></h4>
+<h4>alphasparse_rot<a class="headerlink" href="#alphasparse-rot" title="Permalink to this headline"></a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">alphasparse_status_t</span><span class="w"> </span><span class="n">alphasparse_</span><span class="o">?</span><span class="n">_rot</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">ALPHA_INT</span><span class="w"> </span><span class="n">nz</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="n">ALPHA_Number</span><span class="w"> </span><span class="o">*</span><span class="n">x</span><span class="p">,</span><span class="w"></span>
@@ -2101,7 +2003,7 @@ length is at least <code class="docutils literal notranslate"><span class="pre">
 </table>
 </section>
 <section id="alphasparse-sctr">
-<h4>alphasparse_sctr<a class="headerlink" href="#alphasparse-sctr" title="Permalink to this headline">¶</a></h4>
+<h4>alphasparse_sctr<a class="headerlink" href="#alphasparse-sctr" title="Permalink to this headline"></a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">alphasparse_status_t</span><span class="w"> </span><span class="n">alphasparse_</span><span class="o">?</span><span class="n">_sctr</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">ALPHA_INT</span><span class="w"> </span><span class="n">nz</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="n">ALPHA_Number</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"></span>
@@ -2153,7 +2055,7 @@ value</p></td>
 </table>
 </section>
 <section id="alphasparse-doti">
-<h4>alphasparse_doti<a class="headerlink" href="#alphasparse-doti" title="Permalink to this headline">¶</a></h4>
+<h4>alphasparse_doti<a class="headerlink" href="#alphasparse-doti" title="Permalink to this headline"></a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">ALPHA_Number</span><span class="w"> </span><span class="n">alphasparse_</span><span class="o">?</span><span class="n">_doti</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">ALPHA_INT</span><span class="w"> </span><span class="n">nz</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">ALPHA_Number</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"></span>
@@ -2202,7 +2104,7 @@ max(indx[i])</p></td>
 </table>
 </section>
 <section id="alphasparse-dotci-sub">
-<h4>alphasparse_dotci_sub<a class="headerlink" href="#alphasparse-dotci-sub" title="Permalink to this headline">¶</a></h4>
+<h4>alphasparse_dotci_sub<a class="headerlink" href="#alphasparse-dotci-sub" title="Permalink to this headline"></a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="n">alphasparse_</span><span class="o">?</span><span class="n">_dotci_sub</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">ALPHA_INT</span><span class="w"> </span><span class="n">nz</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">ALPHA_Number</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"></span>
@@ -2262,7 +2164,7 @@ product of <code class="docutils literal notranslate"><span class="pre">x</span>
 </table>
 </section>
 <section id="alphasparse-dotui-sub">
-<h4>alphasparse_dotui_sub<a class="headerlink" href="#alphasparse-dotui-sub" title="Permalink to this headline">¶</a></h4>
+<h4>alphasparse_dotui_sub<a class="headerlink" href="#alphasparse-dotui-sub" title="Permalink to this headline"></a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="n">alphasparse_</span><span class="o">?</span><span class="n">_dotui_sub</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">ALPHA_INT</span><span class="w"> </span><span class="n">nz</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">ALPHA_Number</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"></span>
@@ -2323,11 +2225,11 @@ of <code class="docutils literal notranslate"><span class="pre">x</span></code> 
 </section>
 </section>
 <section id="dcu-backend">
-<h2>DCU backend<a class="headerlink" href="#dcu-backend" title="Permalink to this headline">¶</a></h2>
+<h2>DCU backend<a class="headerlink" href="#dcu-backend" title="Permalink to this headline"></a></h2>
 <section id="sparse-level1-functions">
-<h3>Sparse Level1 Functions<a class="headerlink" href="#sparse-level1-functions" title="Permalink to this headline">¶</a></h3>
+<h3>Sparse Level1 Functions<a class="headerlink" href="#sparse-level1-functions" title="Permalink to this headline"></a></h3>
 <section id="alphasparse-dcu-axpyi">
-<h4>alphasparse_dcu_axpyi<a class="headerlink" href="#alphasparse-dcu-axpyi" title="Permalink to this headline">¶</a></h4>
+<h4>alphasparse_dcu_axpyi<a class="headerlink" href="#alphasparse-dcu-axpyi" title="Permalink to this headline"></a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">alphasparse_status_t</span><span class="w"> </span><span class="n">alphasparse_dcu_</span><span class="o">?</span><span class="n">_axpyi</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="n">ALPHA_INT</span><span class="w"> </span><span class="n">nnz</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">ALPHA_Number</span><span class="w"> </span><span class="n">alpha</span><span class="p">,</span><span class="w"></span>
@@ -2402,7 +2304,7 @@ addressing, the index starts with 1</p></td>
 to the host. It may return before the actual computation has finished.</p>
 </section>
 <section id="alphasparse-dcu-doti">
-<h4>alphasparse_dcu_doti<a class="headerlink" href="#alphasparse-dcu-doti" title="Permalink to this headline">¶</a></h4>
+<h4>alphasparse_dcu_doti<a class="headerlink" href="#alphasparse-dcu-doti" title="Permalink to this headline"></a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">alphasparse_status_t</span><span class="w"> </span><span class="n">alphasparse_dcu_</span><span class="o">?</span><span class="n">_doti</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="n">alphasparse_dcu_handle_t</span><span class="w"> </span><span class="n">handle</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="n">ALPHA_INT</span><span class="w"> </span><span class="n">nnz</span><span class="p">,</span><span class="w"></span>
@@ -2477,7 +2379,7 @@ addressing, the index starts with 1</p></td>
 to the host. It may return before the actual computation has finished.</p>
 </section>
 <section id="alphasparse-dcu-dotci">
-<h4>alphasparse_dcu_dotci<a class="headerlink" href="#alphasparse-dcu-dotci" title="Permalink to this headline">¶</a></h4>
+<h4>alphasparse_dcu_dotci<a class="headerlink" href="#alphasparse-dcu-dotci" title="Permalink to this headline"></a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">alphasparse_status_t</span><span class="w"> </span><span class="n">alphasparse_dcu_</span><span class="o">?</span><span class="n">_dotci</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="n">alphasparse_dcu_handle_t</span><span class="w"> </span><span class="n">handle</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="n">ALPHA_INT</span><span class="w"> </span><span class="n">nnz</span><span class="p">,</span><span class="w"></span>
@@ -2554,7 +2456,7 @@ addressing, the index starts with 1</p></td>
 to the host. It may return before the actual computation has finished.</p>
 </section>
 <section id="alphasparse-dcu-gthr">
-<h4>alphasparse_dcu_gthr<a class="headerlink" href="#alphasparse-dcu-gthr" title="Permalink to this headline">¶</a></h4>
+<h4>alphasparse_dcu_gthr<a class="headerlink" href="#alphasparse-dcu-gthr" title="Permalink to this headline"></a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">alphasparse_status_t</span><span class="w"> </span><span class="n">alphasparse_dcu_</span><span class="o">?</span><span class="n">_gthr</span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="n">alphasparse_dcu_handle_t</span><span class="w"> </span><span class="n">handle</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="n">ALPHA_INT</span><span class="w"> </span><span class="n">nnz</span><span class="p">,</span><span class="w"></span>
@@ -2625,7 +2527,7 @@ addressing, the index starts with 1</p></td>
 to the host. It may return before the actual computation has finished.</p>
 </section>
 <section id="alphasparse-dcu-gthrz">
-<h4>alphasparse_dcu_gthrz<a class="headerlink" href="#alphasparse-dcu-gthrz" title="Permalink to this headline">¶</a></h4>
+<h4>alphasparse_dcu_gthrz<a class="headerlink" href="#alphasparse-dcu-gthrz" title="Permalink to this headline"></a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">alphasparse_status_t</span><span class="w"> </span><span class="n">alphasparse_dcu_</span><span class="o">?</span><span class="n">_gthrz</span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="n">alphasparse_dcu_handle_t</span><span class="w"> </span><span class="n">handle</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="n">ALPHA_INT</span><span class="w"> </span><span class="n">nnz</span><span class="p">,</span><span class="w"></span>
@@ -2699,7 +2601,7 @@ addressing, the index starts with 1</p></td>
 to the host. It may return before the actual computation has finished.</p>
 </section>
 <section id="alphasparse-dcu-roti">
-<h4>alphasparse_dcu_roti<a class="headerlink" href="#alphasparse-dcu-roti" title="Permalink to this headline">¶</a></h4>
+<h4>alphasparse_dcu_roti<a class="headerlink" href="#alphasparse-dcu-roti" title="Permalink to this headline"></a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">alphasparse_status_t</span><span class="w"> </span><span class="n">alphasparse_dcu_</span><span class="o">?</span><span class="n">_roti</span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="n">alphasparse_dcu_handle_t</span><span class="w"> </span><span class="n">handle</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="n">ALPHA_INT</span><span class="w"> </span><span class="n">nnz</span><span class="p">,</span><span class="w"></span>
@@ -2777,7 +2679,7 @@ addressing, the index starts with 1</p></td>
 to the host. It may return before the actual computation has finished.</p>
 </section>
 <section id="alphasparse-dcu-sctr">
-<h4>alphasparse_dcu_sctr<a class="headerlink" href="#alphasparse-dcu-sctr" title="Permalink to this headline">¶</a></h4>
+<h4>alphasparse_dcu_sctr<a class="headerlink" href="#alphasparse-dcu-sctr" title="Permalink to this headline"></a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">alphasparse_status_t</span><span class="w"> </span><span class="n">alphasparse_dcu_</span><span class="o">?</span><span class="n">_sctr</span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="n">alphasparse_dcu_handle_t</span><span class="w"> </span><span class="n">handle</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="n">ALPHA_INT</span><span class="w"> </span><span class="n">nnz</span><span class="p">,</span><span class="w"></span>
@@ -2850,9 +2752,9 @@ to the host. It may return before the actual computation has finished.</p>
 </section>
 </section>
 <section id="sparse-level-2-functions">
-<h3>Sparse Level 2 Functions<a class="headerlink" href="#sparse-level-2-functions" title="Permalink to this headline">¶</a></h3>
+<h3>Sparse Level 2 Functions<a class="headerlink" href="#sparse-level-2-functions" title="Permalink to this headline"></a></h3>
 <section id="alphasparse-dcu-csrmv">
-<h4>alphasparse_dcu_csrmv<a class="headerlink" href="#alphasparse-dcu-csrmv" title="Permalink to this headline">¶</a></h4>
+<h4>alphasparse_dcu_csrmv<a class="headerlink" href="#alphasparse-dcu-csrmv" title="Permalink to this headline"></a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">alphasparse_status_t</span><span class="w"> </span><span class="n">alphasparse_dcu_</span><span class="o">?</span><span class="n">_csrmv</span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="n">alphasparse_dcu_handle_t</span><span class="w"> </span><span class="n">handle</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="n">alphasparse_operation_t</span><span class="w"> </span><span class="n">trans</span><span class="p">,</span><span class="w"></span>
@@ -2998,7 +2900,7 @@ elements ( op(A)==AT or op(A)==AH).</p></td>
 to the host. It may return before the actual computation has finished.</p>
 </section>
 <section id="alphasparse-dcu-coomv">
-<h4>alphasparse_dcu_coomv<a class="headerlink" href="#alphasparse-dcu-coomv" title="Permalink to this headline">¶</a></h4>
+<h4>alphasparse_dcu_coomv<a class="headerlink" href="#alphasparse-dcu-coomv" title="Permalink to this headline"></a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">alphasparse_status_t</span><span class="w"> </span><span class="n">alphasparse_dcu_</span><span class="o">?</span><span class="n">_csrmv</span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="n">alphasparse_dcu_handle_t</span><span class="w"> </span><span class="n">handle</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="n">alphasparse_operation_t</span><span class="w"> </span><span class="n">trans</span><span class="p">,</span><span class="w"></span>
@@ -3141,7 +3043,7 @@ elements ( op(A)==AT or op(A)==AH).</p></td>
 to the host. It may return before the actual computation has finished.</p>
 </section>
 <section id="alphasparse-dcu-ellmv">
-<h4>alphasparse_dcu_ellmv<a class="headerlink" href="#alphasparse-dcu-ellmv" title="Permalink to this headline">¶</a></h4>
+<h4>alphasparse_dcu_ellmv<a class="headerlink" href="#alphasparse-dcu-ellmv" title="Permalink to this headline"></a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">alphasparse_status_t</span><span class="w"> </span><span class="n">alphasparse_dcu_</span><span class="o">?</span><span class="n">_ellmv</span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="n">alphasparse_dcu_handle_t</span><span class="w"> </span><span class="n">handle</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="n">alphasparse_operation_t</span><span class="w"> </span><span class="n">trans</span><span class="p">,</span><span class="w"></span>
@@ -3279,7 +3181,7 @@ elements ( op(A)==AT or op(A)==AH).</p></td>
 to the host. It may return before the actual computation has finished.</p>
 </section>
 <section id="alphasparse-dcu-bsrmv">
-<h4>alphasparse_dcu_bsrmv<a class="headerlink" href="#alphasparse-dcu-bsrmv" title="Permalink to this headline">¶</a></h4>
+<h4>alphasparse_dcu_bsrmv<a class="headerlink" href="#alphasparse-dcu-bsrmv" title="Permalink to this headline"></a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">alphasparse_status_t</span><span class="w"> </span><span class="n">alphasparse_dcu_</span><span class="o">?</span><span class="n">_bsrmv</span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="n">alphasparse_dcu_handle_t</span><span class="w"> </span><span class="n">handle</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="n">alphasparse_layout_t</span><span class="w"> </span><span class="n">dir</span><span class="p">,</span><span class="w"></span>
@@ -3431,7 +3333,7 @@ op(A)==AH).</p></td>
 to the host. It may return before the actual computation has finished.</p>
 </section>
 <section id="alphasparse-dcu-hybmv">
-<h4>alphasparse_dcu_hybmv<a class="headerlink" href="#alphasparse-dcu-hybmv" title="Permalink to this headline">¶</a></h4>
+<h4>alphasparse_dcu_hybmv<a class="headerlink" href="#alphasparse-dcu-hybmv" title="Permalink to this headline"></a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">alphasparse_status_t</span><span class="w"> </span><span class="n">alphasparse_dcu_</span><span class="o">?</span><span class="n">_hybmv</span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="n">alphasparse_dcu_handle_t</span><span class="w"> </span><span class="n">handle</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="n">alphasparse_operation_t</span><span class="w"> </span><span class="n">trans</span><span class="p">,</span><span class="w"></span>
@@ -3545,7 +3447,7 @@ op(A)==AT or op(A)==AH).</p></td>
 to the host. It may return before the actual computation has finished.</p>
 </section>
 <section id="alphasparse-dcu-csrsv">
-<h4>alphasparse_dcu_csrsv<a class="headerlink" href="#alphasparse-dcu-csrsv" title="Permalink to this headline">¶</a></h4>
+<h4>alphasparse_dcu_csrsv<a class="headerlink" href="#alphasparse-dcu-csrsv" title="Permalink to this headline"></a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">alphasparse_status_t</span><span class="w"> </span><span class="n">alphasparse_dcu_</span><span class="o">?</span><span class="n">_csrsv_solve</span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="n">alphasparse_dcu_handle_t</span><span class="w"> </span><span class="n">handle</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="n">alphasparse_operation_t</span><span class="w"> </span><span class="n">trans</span><span class="p">,</span><span class="w"></span>
@@ -3694,7 +3596,7 @@ user.(nullptr)</p></td>
 to the host. It may return before the actual computation has finished.</p>
 </section>
 <section id="alphasparse-dcu-bsrsv">
-<h4>alphasparse_dcu_bsrsv<a class="headerlink" href="#alphasparse-dcu-bsrsv" title="Permalink to this headline">¶</a></h4>
+<h4>alphasparse_dcu_bsrsv<a class="headerlink" href="#alphasparse-dcu-bsrsv" title="Permalink to this headline"></a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">alphasparse_status_t</span><span class="w"> </span><span class="n">alphasparse_dcu_</span><span class="o">?</span><span class="n">_bsrsv_solve</span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="n">alphasparse_dcu_handle_t</span><span class="w"> </span><span class="n">handle</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="n">alphasparse_layout_t</span><span class="w"> </span><span class="n">dir</span><span class="p">,</span><span class="w"></span>
@@ -3858,9 +3760,9 @@ to the host. It may return before the actual computation has finished.</p>
 </section>
 </section>
 <section id="sparse-level3-functions">
-<h3>Sparse Level3 Functions<a class="headerlink" href="#sparse-level3-functions" title="Permalink to this headline">¶</a></h3>
+<h3>Sparse Level3 Functions<a class="headerlink" href="#sparse-level3-functions" title="Permalink to this headline"></a></h3>
 <section id="alphasparse-dcu-csrmm">
-<h4>alphasparse_dcu_csrmm<a class="headerlink" href="#alphasparse-dcu-csrmm" title="Permalink to this headline">¶</a></h4>
+<h4>alphasparse_dcu_csrmm<a class="headerlink" href="#alphasparse-dcu-csrmm" title="Permalink to this headline"></a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">alphasparse_status_t</span><span class="w"> </span><span class="n">alphasparse_dcu_</span><span class="o">?</span><span class="n">_csrmm</span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="n">alphasparse_dcu_handle_t</span><span class="w"> </span><span class="n">handle</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="n">alphasparse_operation_t</span><span class="w"> </span><span class="n">trans_A</span><span class="p">,</span><span class="w"></span>
@@ -4042,7 +3944,7 @@ indices of the sparse CSR matrix <code class="docutils literal notranslate"><spa
 to the host. It may return before the actual computation has finished.</p>
 </section>
 <section id="alphasparse-dcu-bsrmm">
-<h4>alphasparse_dcu_bsrmm<a class="headerlink" href="#alphasparse-dcu-bsrmm" title="Permalink to this headline">¶</a></h4>
+<h4>alphasparse_dcu_bsrmm<a class="headerlink" href="#alphasparse-dcu-bsrmm" title="Permalink to this headline"></a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">alphasparse_status_t</span><span class="w"> </span><span class="n">alphasparse_dcu_</span><span class="o">?</span><span class="n">_bsrmm</span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="n">alphasparse_dcu_handle_t</span><span class="w"> </span><span class="n">handle</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="n">alphasparse_layout_t</span><span class="w"> </span><span class="n">dir</span><span class="p">,</span><span class="w"></span>
@@ -4235,7 +4137,7 @@ column indices of the sparse BSR matrix <code class="docutils literal notranslat
 to the host. It may return before the actual computation has finished.</p>
 </section>
 <section id="alphasparse-dcu-csrsm-solve">
-<h4>alphasparse_dcu_csrsm_solve<a class="headerlink" href="#alphasparse-dcu-csrsm-solve" title="Permalink to this headline">¶</a></h4>
+<h4>alphasparse_dcu_csrsm_solve<a class="headerlink" href="#alphasparse-dcu-csrsm-solve" title="Permalink to this headline"></a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">alphasparse_status_t</span><span class="w"> </span><span class="n">alphasparse_dcu_</span><span class="o">?</span><span class="n">_csrsm_solve</span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="n">alphasparse_dcu_handle_t</span><span class="w"> </span><span class="n">handle</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="n">alphasparse_operation_t</span><span class="w"> </span><span class="n">trans_A</span><span class="p">,</span><span class="w"></span>
@@ -4407,7 +4309,7 @@ matrix <code class="docutils literal notranslate"><span class="pre">B</span></co
 to the host. It may return before the actual computation has finished.</p>
 </section>
 <section id="alphasparse-dcu-gemmi">
-<h4>alphasparse_dcu_gemmi<a class="headerlink" href="#alphasparse-dcu-gemmi" title="Permalink to this headline">¶</a></h4>
+<h4>alphasparse_dcu_gemmi<a class="headerlink" href="#alphasparse-dcu-gemmi" title="Permalink to this headline"></a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">alphasparse_status_t</span><span class="w"> </span><span class="n">alphasparse_dcu_</span><span class="o">?</span><span class="n">_gemmi</span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="n">alphasparse_dcu_handle_t</span><span class="w"> </span><span class="n">handle</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="n">alphasparse_operation_t</span><span class="w"> </span><span class="n">trans_A</span><span class="p">,</span><span class="w"></span>
@@ -4588,9 +4490,9 @@ to the host. It may return before the actual computation has finished.</p>
 </section>
 </section>
 <section id="sparse-extra-functions">
-<h3>Sparse Extra Functions<a class="headerlink" href="#sparse-extra-functions" title="Permalink to this headline">¶</a></h3>
+<h3>Sparse Extra Functions<a class="headerlink" href="#sparse-extra-functions" title="Permalink to this headline"></a></h3>
 <section id="alphasparse-dcu-csrgeam-nnz">
-<h4>alphasparse_dcu_csrgeam_nnz<a class="headerlink" href="#alphasparse-dcu-csrgeam-nnz" title="Permalink to this headline">¶</a></h4>
+<h4>alphasparse_dcu_csrgeam_nnz<a class="headerlink" href="#alphasparse-dcu-csrgeam-nnz" title="Permalink to this headline"></a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">alphasparse_status_t</span><span class="w"> </span><span class="n">alphasparse_dcu_csrgeam_nnz</span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="n">alphasparse_dcu_handle_t</span><span class="w"> </span><span class="n">handle</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="n">ALPHA_INT</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="w"></span>
@@ -4785,7 +4687,7 @@ a host or device pointer.</p></td>
 to the host. It may return before the actual computation has finished.</p>
 </section>
 <section id="alphasparse-dcu-csrgeam">
-<h4>alphasparse_dcu_csrgeam<a class="headerlink" href="#alphasparse-dcu-csrgeam" title="Permalink to this headline">¶</a></h4>
+<h4>alphasparse_dcu_csrgeam<a class="headerlink" href="#alphasparse-dcu-csrgeam" title="Permalink to this headline"></a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">alphasparse_status_t</span><span class="w"> </span><span class="n">alphasparse_dcu_</span><span class="o">?</span><span class="n">_csrgeam</span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="n">alphasparse_dcu_handle_t</span><span class="w"> </span><span class="n">handle</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="n">ALPHA_INT</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="w"></span>
@@ -5022,7 +4924,7 @@ to the host. It may return before the actual computation has finished.</p>
 <p>Both scalars <code class="docutils literal notranslate"><span class="pre">α</span></code> and <code class="docutils literal notranslate"><span class="pre">beta</span></code> have to be valid.</p>
 </section>
 <section id="alphasparse-dcu-csrgemm-nnz">
-<h4>alphasparse_dcu_csrgemm_nnz<a class="headerlink" href="#alphasparse-dcu-csrgemm-nnz" title="Permalink to this headline">¶</a></h4>
+<h4>alphasparse_dcu_csrgemm_nnz<a class="headerlink" href="#alphasparse-dcu-csrgemm-nnz" title="Permalink to this headline"></a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">alphasparse_status_t</span><span class="w"> </span><span class="n">alphasparse_dcu_csrgemm_nnz</span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="n">alphasparse_dcu_handle_t</span><span class="w"> </span><span class="n">handle</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="n">alphasparse_operation_t</span><span class="w"> </span><span class="n">trans_A</span><span class="p">,</span><span class="w"></span>
@@ -5321,7 +5223,7 @@ a host or device pointer.</p></td>
 to the host. It may return before the actual computation has finished.</p>
 </section>
 <section id="alphasparse-dcu-csrgemm">
-<h4>alphasparse_dcu_csrgemm<a class="headerlink" href="#alphasparse-dcu-csrgemm" title="Permalink to this headline">¶</a></h4>
+<h4>alphasparse_dcu_csrgemm<a class="headerlink" href="#alphasparse-dcu-csrgemm" title="Permalink to this headline"></a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">alphasparse_status_t</span><span class="w"> </span><span class="n">alphasparse_dcu_</span><span class="o">?</span><span class="n">_csrgemm</span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="n">alphasparse_dcu_handle_t</span><span class="w"> </span><span class="n">handle</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="n">alphasparse_operation_t</span><span class="w"> </span><span class="n">trans_A</span><span class="p">,</span><span class="w"></span>
@@ -5676,49 +5578,32 @@ to the host. It may return before the actual computation has finished.</p>
 
 
            </div>
-           
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-      
-        <a href="index.html" class="btn btn-neutral float-left" title="AlphaSparse Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="AlphaSparse Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &copy; Copyright 2022, NCIC-AlphaSparse
-
-    </p>
+    <p>&#169; Copyright 2022, NCIC-AlphaSparse.</p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>
