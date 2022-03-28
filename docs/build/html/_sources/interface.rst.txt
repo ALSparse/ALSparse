@@ -17,30 +17,23 @@ Function return value
 The function has several return values, indicating whether the function
 is executed successfully, as shown below:
 
-+--------------------------------+-------------------------------------+
-| return value                   | Return value meaning                |
-+================================+=====================================+
-|                                | Successful operation                |
-| ``ALPHA_SPARSE_STATUS_SUCCESS``|                                     |
-+--------------------------------+-------------------------------------+
-| ``ALPHA_S                      | The matrix is not initialized       |
-| PARSE_STATUS_NOT_INITIALIZED`` |                                     |
-+--------------------------------+-------------------------------------+
-| ``ALPH                         | Internal space allocation failed    |
-| A_SPARSE_STATUS_ALLOC_FAILED`` |                                     |
-+--------------------------------+-------------------------------------+
-| ``ALPHA                        | The input parameter contains an     |
-| _SPARSE_STATUS_INVALID_VALUE`` | illegal value                       |
-+--------------------------------+-------------------------------------+
-| ``ALPHA_SP                     | Execution failed                    |
-| ARSE_STATUS_EXECUTION_FAILED`` |                                     |
-+--------------------------------+-------------------------------------+
-| ``ALPHA_                       | Algorithm implementation error      |
-| SPARSE_STATUS_INTERNAL_ERROR`` |                                     |
-+--------------------------------+-------------------------------------+
-| ``ALPHA                        | The requested operation cannot be   |
-| _SPARSE_STATUS_NOT_SUPPORTED`` | supported                           |
-+--------------------------------+-------------------------------------+
++-----------------------------------------+----------------------------------------------+
+| return value                            | Return value meaning                         |
++=========================================+==============================================+
+|``ALPHA_SPARSE_STATUS_SUCCESS``          | Successful operation                         |
++-----------------------------------------+----------------------------------------------+
+|``ALPHA_SPARSE_STATUS_NOT_INITIALIZED``  | The matrix is not initialized                |
++-----------------------------------------+----------------------------------------------+
+|``ALPHA_SPARSE_STATUS_ALLOC_FAILED``     | Internal space allocation failed             |
++-----------------------------------------+----------------------------------------------+
+| ``ALPHA_SPARSE_STATUS_INVALID_VALUE``   | The input parameter contains an illegal value|
++-----------------------------------------+----------------------------------------------+
+| ``ALPHA_SPARSE_STATUS_EXECUTION_FAILED``| Execution failed                             |
++-----------------------------------------+----------------------------------------------+
+| ``ALPHA_SPARSE_STATUS_INTERNAL_ERROR``  | Algorithm implementation error               |
++-----------------------------------------+----------------------------------------------+
+| ``ALPHA_SPARSE_STATUS_NOT_SUPPORTED``   | The requested operation cannot be supported  |
++-----------------------------------------+----------------------------------------------+
 
 Basic operations of sparse matrix
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -73,34 +66,49 @@ single-precision complex number, ``z``\ corresponds to double complex,
 that is double-precision complex number, other parameters are shown
 below:
 
-+--------------+-------------------------------------------------------+
-| Input        | Description                                           |
-| parameters   |                                                       |
-+==============+=======================================================+
-| A            | COO format                                            |
-+--------------+-------------------------------------------------------+
-| indexing     | Indicates the addressing mode of the input            |
-|              | array,There are the following                         |
-|              | options:\ ``ALPHA_SPARSE_INDEX_BASE_ZERO``, Based on  |
-|              | 0 addressing, index starts with                       |
-|              | 0\ ``ALPHA_SPARSE_INDEX_BASE_ONE``, Based on 1        |
-|              | addressing, index starts with 1                       |
-+--------------+-------------------------------------------------------+
-| rows         | Number of rows of matrix ``A``                        |
-+--------------+-------------------------------------------------------+
-| cos          | Number of columns of matrix ``A``                     |
-+--------------+-------------------------------------------------------+
-| nnz          | The number of non-zero elements of matrix ``A``       |
-+--------------+-------------------------------------------------------+
-| row_indx     | The row coordinate index of each non-zero element,    |
-|              | the length is ``nnz``                                 |
-+--------------+-------------------------------------------------------+
-| col_indx     | The column coordinate index of each non-zero element, |
-|              | the length is ``nnz``                                 |
-+--------------+-------------------------------------------------------+
-| values       | Store the values of non-zero elements in matrix ``A`` |
-|              | in any order, with a length of ``nnz``                |
-+--------------+-------------------------------------------------------+
+.. .. tabularcolumns::
+..       |\X{1}{6}|\X{5}{6}|
+
+.. ================== ============
+..  Input  parameters Description               
+.. ================== ============
+..  A                 COO format                                            
+..  indexing          Indicates the addressing mode of the input array, There are the following  options:
+..                    ``ALPHA_SPARSE_INDEX_BASE_ZERO``, Based on 0 addressing, index starts with 0.
+..                    ``ALPHA_SPARSE_INDEX_BASE_ONE``, Based on 1 addressing, index starts with 1.                     
+..  rows              Number of rows of matrix ``A``                        
+..  cos               Number of columns of matrix ``A``                     
+..  nnz               The number of non-zero elements of matrix ``A``       
+..  row_indx          The row coordinate index of each non-zero element, the length is ``nnz``  
+..  col_indx          The column coordinate index of each non-zero element, the length is ``nnz``
+..  values            Store the values of non-zero elements in matrix ``A`` in any order, with a length of ``nnz``
+.. ================== ============
+
+.. list-table::     
+   :widths: 20 30
+   :header-rows: 1
+
+   * - Input Parameters
+     - Description
+   * - A
+     - COO format
+   * - indexing
+     - Following options are uesd to indicate the addressing mode of the input array. 
+       ``ALPHA_SPARSE_INDEX_BASE_ZERO``, Based on 0 addressing, index starts with 0. 
+       ``ALPHA_SPARSE_INDEX_BASE_ONE``, Based on 1 addressing, index starts with 1.
+       <div style="line-height: 0; padding: 0; margin: 0"></div>
+   * - rows
+     - Number of rows of matrix ``A``
+   * - cols
+     - Number of columns of matrix ``A``
+   * - nnz
+     - The number of non-zero elements of matrix ``A``
+   * - row_indx
+     - The row coordinate index of each non-zero element, the length is ``nnz``
+   * - col_indx
+     - The column coordinate index of each non-zero element, the length is ``nnz``
+   * - values
+     - Store the values of non-zero elements in matrix ``A`` in any order, with a length of ``nnz``
 
 alphasparse_create_csc
 ^^^^^^^^^^^^^^^^^^^^^^
