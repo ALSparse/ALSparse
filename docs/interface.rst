@@ -17,30 +17,45 @@ Function return value
 The function has several return values, indicating whether the function
 is executed successfully, as shown below:
 
-+--------------------------------+-------------------------------------+
-| return value                   | Return value meaning                |
-+================================+=====================================+
-|                                | Successful operation                |
-| ``ALPHA_SPARSE_STATUS_SUCCESS``|                                     |
-+--------------------------------+-------------------------------------+
-| ``ALPHA_S                      | The matrix is not initialized       |
-| PARSE_STATUS_NOT_INITIALIZED`` |                                     |
-+--------------------------------+-------------------------------------+
-| ``ALPH                         | Internal space allocation failed    |
-| A_SPARSE_STATUS_ALLOC_FAILED`` |                                     |
-+--------------------------------+-------------------------------------+
-| ``ALPHA                        | The input parameter contains an     |
-| _SPARSE_STATUS_INVALID_VALUE`` | illegal value                       |
-+--------------------------------+-------------------------------------+
-| ``ALPHA_SP                     | Execution failed                    |
-| ARSE_STATUS_EXECUTION_FAILED`` |                                     |
-+--------------------------------+-------------------------------------+
-| ``ALPHA_                       | Algorithm implementation error      |
-| SPARSE_STATUS_INTERNAL_ERROR`` |                                     |
-+--------------------------------+-------------------------------------+
-| ``ALPHA                        | The requested operation cannot be   |
-| _SPARSE_STATUS_NOT_SUPPORTED`` | supported                           |
-+--------------------------------+-------------------------------------+
++-----------------------------------------+----------------------------------------------+
+| return value                            | Return value meaning                         |
++=========================================+==============================================+
+|``ALPHA_SPARSE_STATUS_SUCCESS``          | Successful operation                         |
++-----------------------------------------+----------------------------------------------+
+|``ALPHA_SPARSE_STATUS_NOT_INITIALIZED``  | The matrix is not initialized                |
++-----------------------------------------+----------------------------------------------+
+|``ALPHA_SPARSE_STATUS_ALLOC_FAILED``     | Internal space allocation failed             |
++-----------------------------------------+----------------------------------------------+
+| ``ALPHA_SPARSE_STATUS_INVALID_VALUE``   | The input parameter contains an illegal value|
++-----------------------------------------+----------------------------------------------+
+| ``ALPHA_SPARSE_STATUS_EXECUTION_FAILED``| Execution failed                             |
++-----------------------------------------+----------------------------------------------+
+| ``ALPHA_SPARSE_STATUS_INTERNAL_ERROR``  | Algorithm implementation error               |
++-----------------------------------------+----------------------------------------------+
+| ``ALPHA_SPARSE_STATUS_NOT_SUPPORTED``   | The requested operation cannot be supported  |
++-----------------------------------------+----------------------------------------------+
+
+
+.. list-table::     
+   :widths: 20 20
+   :header-rows: 1
+
+   * - Return Value
+     - Return Value Meaning
+   * - ``ALPHA_SPARSE_STATUS_SUCCESS``
+     - Successful operation
+   * - ``ALPHA_SPARSE_STATUS_NOT_INITIALIZED``
+     - The matrix is not initialized
+   * - ``ALPHA_SPARSE_STATUS_ALLOC_FAILED``
+     - Internal space allocation failed
+   * - ``ALPHA_SPARSE_STATUS_INVALID_VALUE``
+     - The input parameter contains an illegal value
+   * - ``ALPHA_SPARSE_STATUS_EXECUTION_FAILED``
+     - Execution failed
+   * - ``ALPHA_SPARSE_STATUS_INTERNAL_ERROR``
+     - Algorithm implementation error
+   * - ``ALPHA_SPARSE_STATUS_NOT_SUPPORTED``
+     - The requested operation cannot be supported
 
 .. list-table:: Frozen Delights!
    :widths: 15 10 30
