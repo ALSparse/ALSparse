@@ -7,7 +7,7 @@ ifeq ($(HIP_ON),1)
 SUBDIRS += dcu
 endif
 ifeq ($(HYGON_ON),1)
-SUBDIRS += hygon
+SUBDIRS += x86_64
 endif
 lib :
 	@for d in $(SUBDIRS) ; \

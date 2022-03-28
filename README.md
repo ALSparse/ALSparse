@@ -1,6 +1,6 @@
 # AlphaSparse
 
-AlphaSparse aims to build a common interface that provides Basic Linear Algebra Subroutines for sparse computation for diverse multi-core and many-core processors, and expects to be extended on distributed and heterogeneous platforms. Recently, AlphaSparse is created using the basic C/C++ programming language and can be deployed on both CPU (ARMv8-based and x86-based multi-core platforms) and DCU. 
+AlphaSparse aims to build a common interface that provides Basic Linear Algebra Subroutines for sparse computation for diverse multi-core and many-core processors, and expects to be extended on distributed and heterogeneous platforms. Recently, AlphaSparse is created using the basic C/C++ programming language and can be deployed on both CPU (ARMv8-based and x86-based multi-core platforms) and DCU (HIP-based many-core platform).
 
 It is primarily constrcuted with few dependencies on third-party library and very easy to use. Users can extend the library by adding customized BLAS kernels or sparse matrix storage formats. It's possible to extend more hardware platform as well.
 
@@ -12,7 +12,7 @@ The latest AlphaSparse documentation and API description can be found [here](htt
 
 ## CPU side
 
-AlphaSparse supports multiple CPU hardware platforms. Since it's written in C/C++, it can be used on nearly all kind of CPUs (The general kernels and relevant api comprise plain version). Apart from plain  kernels, high performance kernels targeting **hygon CPU** and **Kunpeng CPU** are provided as well. The fast kernels can be compiled either on x86_64 or arm based CPUs. 
+AlphaSparse supports multiple CPU hardware platforms. Since it's written in C/C++, it can be used on nearly all kind of CPUs (The general kernels and relevant api comprise plain version). Apart from plain  kernels, high performance kernels targeting **hygon CPU** and **Kunpeng CPU** are provided as well. The fast kernels can be compiled either on x86_64 or arm based CPUs.
 
 Up to now, the fast kernels are verified on:
 
@@ -21,9 +21,9 @@ Up to now, the fast kernels are verified on:
 
 ## GPU side
 
-AlphaSparse supports DCU platform(By Sugon) which is compatible with **HIP**. 
+AlphaSparse supports Deep Computing Unit platform (DCU, By Hygon) which is compatible with **HIP**. 
 
-GPU kernels are supported on: 
+GPU kernels are supported on:
 
 - DCU
 
@@ -94,5 +94,5 @@ More options are listed in AlphaSparse/src/util/args.c
 ```
 
 # License
-The LICENSE file can be found in the main repository.
 
+The LICENSE file can be found in the main repository.
