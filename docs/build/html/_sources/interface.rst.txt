@@ -96,7 +96,6 @@ below:
      - Following options are uesd to indicate the addressing mode of the input array. 
        ``ALPHA_SPARSE_INDEX_BASE_ZERO``, Based on 0 addressing, index starts with 0. 
        ``ALPHA_SPARSE_INDEX_BASE_ONE``, Based on 1 addressing, index starts with 1.
-       <div style="line-height: 0; padding: 0; margin: 0"></div>
    * - rows
      - Number of rows of matrix ``A``
    * - cols
