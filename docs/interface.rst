@@ -69,45 +69,45 @@ below:
 .. .. tabularcolumns::
 ..       |\X{1}{6}|\X{5}{6}|
 
-.. ================== ============
-..  Input  parameters Description               
-.. ================== ============
-..  A                 COO format                                            
-..  indexing          Indicates the addressing mode of the input array, There are the following  options:
-..                    ``ALPHA_SPARSE_INDEX_BASE_ZERO``, Based on 0 addressing, index starts with 0.
-..                    ``ALPHA_SPARSE_INDEX_BASE_ONE``, Based on 1 addressing, index starts with 1.                     
-..  rows              Number of rows of matrix ``A``                        
-..  cos               Number of columns of matrix ``A``                     
-..  nnz               The number of non-zero elements of matrix ``A``       
-..  row_indx          The row coordinate index of each non-zero element, the length is ``nnz``  
-..  col_indx          The column coordinate index of each non-zero element, the length is ``nnz``
-..  values            Store the values of non-zero elements in matrix ``A`` in any order, with a length of ``nnz``
-.. ================== ============
+================== ============
+ Input  parameters Description               
+================== ============
+ A                 COO format                                            
+ indexing          Indicates the addressing mode of the input array, There are the following  options:
+                   ``ALPHA_SPARSE_INDEX_BASE_ZERO``, Based on 0 addressing, index starts with 0.
+                   ``ALPHA_SPARSE_INDEX_BASE_ONE``, Based on 1 addressing, index starts with 1.                     
+ rows              Number of rows of matrix ``A``                        
+ cos               Number of columns of matrix ``A``                     
+ nnz               The number of non-zero elements of matrix ``A``       
+ row_indx          The row coordinate index of each non-zero element, the length is ``nnz``  
+ col_indx          The column coordinate index of each non-zero element, the length is ``nnz``
+ values            Store the values of non-zero elements in matrix ``A`` in any order, with a length of ``nnz``
+================== ============
 
-.. list-table::     
-   :widths: 20 30
-   :header-rows: 1
+.. .. list-table::     
+..    :widths: 20 30
+..    :header-rows: 1
 
-   * - Input Parameters
-     - Description
-   * - A
-     - COO format
-   * - indexing
-     - Following options are uesd to indicate the addressing mode of the input array. 
-       ``ALPHA_SPARSE_INDEX_BASE_ZERO``, Based on 0 addressing, index starts with 0. 
-       ``ALPHA_SPARSE_INDEX_BASE_ONE``, Based on 1 addressing, index starts with 1.
-   * - rows
-     - Number of rows of matrix ``A``
-   * - cols
-     - Number of columns of matrix ``A``
-   * - nnz
-     - The number of non-zero elements of matrix ``A``
-   * - row_indx
-     - The row coordinate index of each non-zero element, the length is ``nnz``
-   * - col_indx
-     - The column coordinate index of each non-zero element, the length is ``nnz``
-   * - values
-     - Store the values of non-zero elements in matrix ``A`` in any order, with a length of ``nnz``
+..    * - Input Parameters
+..      - Description
+..    * - A
+..      - COO format
+..    * - indexing
+..      - Following options are uesd to indicate the addressing mode of the input array. 
+..        ``ALPHA_SPARSE_INDEX_BASE_ZERO``, Based on 0 addressing, index starts with 0. 
+..        ``ALPHA_SPARSE_INDEX_BASE_ONE``, Based on 1 addressing, index starts with 1.
+..    * - rows
+..      - Number of rows of matrix ``A``
+..    * - cols
+..      - Number of columns of matrix ``A``
+..    * - nnz
+..      - The number of non-zero elements of matrix ``A``
+..    * - row_indx
+..      - The row coordinate index of each non-zero element, the length is ``nnz``
+..    * - col_indx
+..      - The column coordinate index of each non-zero element, the length is ``nnz``
+..    * - values
+..      - Store the values of non-zero elements in matrix ``A`` in any order, with a length of ``nnz``
 
 alphasparse_create_csc
 ^^^^^^^^^^^^^^^^^^^^^^
