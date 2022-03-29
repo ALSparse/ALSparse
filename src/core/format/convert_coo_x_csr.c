@@ -6,6 +6,9 @@
 
 #include "alphasparse/format.h"
 #include "alphasparse/util.h"
+#ifdef __DCU__
+#include "alphasparse/util/qsort_csr_struct.h"
+#endif
 
 alphasparse_status_t ONAME(const ALPHA_SPMAT_CSR *source, ALPHA_SPMAT_COO **dest) {
   ALPHA_SPMAT_COO *mat = alpha_malloc(sizeof(ALPHA_SPMAT_COO));
@@ -30,18 +33,6 @@ alphasparse_status_t ONAME(const ALPHA_SPMAT_CSR *source, ALPHA_SPMAT_COO **dest
     }
   }
 
-  // ALPHA_INT cur_row = 0;
-  // for (ALPHA_INT ai = 0; ai < nnz; ai++)
-  // {
-  //     while (source->rows_end[cur_row] == source->rows_start[cur_row] && cur_row < m)
-  //     {
-  //         cur_row++;
-  //     }
-  //     cur_row += source->rows_start[cur_row] < ai ? 1 : 0;
-  //     rows_indx[ai] = cur_row;
-  //     // if (source->rows_start[cur_row] > ai)
-  //     //     r++;
-  // }
   memcpy(cols_indx, source->col_indx, (uint64_t)sizeof(ALPHA_INT) * nnz);
   memcpy(mat->values, source->values, (uint64_t)sizeof(ALPHA_Number) * nnz);
   mat->nnz = nnz;
