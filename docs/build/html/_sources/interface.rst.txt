@@ -1068,24 +1068,20 @@ precision. The input parameters of the function are shown in below:
 
 .. code:: cpp
 
-   alphasparse_status_t alphasparse_?_spmm( 
+   alphasparse_status_t alphasparse_spmm( 
        const alphasparse_operation_t operation, 
        const alphasparse_matrix_t A, 
        const alphasparse_matrix_t B, 
        alphasparse_matrix_t *C) 
 
-The ``alphasparse_?_spmm`` performs the operation of multiplying a
+The ``alphasparse_spmm`` performs the operation of multiplying a
 sparse matrix and a **sparse** matrix:
 
 .. math:: C := op(A) \times B
 
 ``A`` and ``B`` are sparse matrices, ``C`` is a sparse matrix, and the
-output result of the function is stored at the same time. “``?``”
-indicates the data format, which corresponds to the ``ALPHA_Number`` in
-the interface. ``s`` corresponds to float, ``d`` corresponds to double,
-and ``c`` corresponds to float complex, namely Single-precision complex
-number, ``z`` corresponds to double complex, a double-precision complex
-number. The input parameters of the function are shown below:
+output result of the function is stored at the same time. The input 
+parameters of the function are shown below:
 
 +--------------+-------------------------------------------------------+
 | Input        | Description                                           |
