@@ -1451,24 +1451,20 @@ design</p></td>
 </section>
 <section id="alphasparse-spmm">
 <h4>3.2 alphasparse_spmm<a class="headerlink" href="#alphasparse-spmm" title="Permalink to this headline"></a></h4>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">alphasparse_status_t</span><span class="w"> </span><span class="n">alphasparse_</span><span class="o">?</span><span class="n">_spmm</span><span class="p">(</span><span class="w"></span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">alphasparse_status_t</span><span class="w"> </span><span class="n">alphasparse_spmm</span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">alphasparse_operation_t</span><span class="w"> </span><span class="n">operation</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">alphasparse_matrix_t</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">alphasparse_matrix_t</span><span class="w"> </span><span class="n">B</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="n">alphasparse_matrix_t</span><span class="w"> </span><span class="o">*</span><span class="n">C</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">alphasparse_?_spmm</span></code> performs the operation of multiplying a
+<p>The <code class="docutils literal notranslate"><span class="pre">alphasparse_spmm</span></code> performs the operation of multiplying a
 sparse matrix and a <strong>sparse</strong> matrix:</p>
 <div class="math notranslate nohighlight">
 \[C := op(A) \times B\]</div>
 <p><code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code> are sparse matrices, <code class="docutils literal notranslate"><span class="pre">C</span></code> is a sparse matrix, and the
-output result of the function is stored at the same time. “<code class="docutils literal notranslate"><span class="pre">?</span></code>”
-indicates the data format, which corresponds to the <code class="docutils literal notranslate"><span class="pre">ALPHA_Number</span></code> in
-the interface. <code class="docutils literal notranslate"><span class="pre">s</span></code> corresponds to float, <code class="docutils literal notranslate"><span class="pre">d</span></code> corresponds to double,
-and <code class="docutils literal notranslate"><span class="pre">c</span></code> corresponds to float complex, namely Single-precision complex
-number, <code class="docutils literal notranslate"><span class="pre">z</span></code> corresponds to double complex, a double-precision complex
-number. The input parameters of the function are shown below:</p>
+output result of the function is stored at the same time. The input
+parameters of the function are shown below:</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 20%" />
