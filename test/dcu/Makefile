@@ -7,9 +7,9 @@ TEST_SRC = $(foreach d,$(SRC_DIR), $(wildcard $(d)/*.cpp) )
 OBJCPP = $(patsubst %.cpp, $(OBJ_DIR)/%.o, $(notdir $(TEST_SRC)) )
 TEST_BIN = $(patsubst %.cpp, $(BIN_DIR)/%, $(notdir $(TEST_SRC)) )
 
-CFLAGS += $(INC) $(LIB) $(DEFINE) -l:libalpha_spblas.a -lm -I$(ROOT)/test
+CFLAGS += $(INC) $(LIB) $(DEFINE) -l:libalphasparse.a -lm -I$(ROOT)/test
 
 CPPFLAGS += $(INC) $(DEFINE) -I$(ROOT)/test
-LDFLAGS += -l:libalpha_spblas.a -lm -lstdc++ 
+LDFLAGS += -l:libalphasparse.a -lm -lstdc++ 
 CFLAGS += $(INC) $(DEFINE) -I$(ROOT)/test
 include $(ROOT)/Makefile.tail

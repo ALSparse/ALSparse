@@ -32,7 +32,7 @@ ifeq ($(HIP_ON),1)
 ROCM_DIR = /public/software/compiler/rocm/rocm-3.9.1
 ROCSP_DIR = /home/gcx/csparse
 endif
-LIBNAME = libalpha_spblas
+LIBNAME = libalphasparse
 
 INC += -I$(INC_DIR) 
 

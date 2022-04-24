@@ -18,7 +18,7 @@ extern "C" {
 #include "alphasparse/util/args.h"
 #include "alphasparse/util/io.h"
 #include "alphasparse/util/check.h"
-#include <alpha_spblas_dcu.h>
+#include <alphasparse_dcu.h>
 
 const char *file;
 bool check;

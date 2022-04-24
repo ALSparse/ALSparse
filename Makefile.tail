@@ -135,7 +135,7 @@ $(OBJ) : $(OBJ_DIR)/%.o : %.c
 $(OBJCPP) : $(OBJ_DIR)/%.o : %.cpp
 	$(HCC) -c -o $@ $^ $(CPPFLAGS) -UONAME 
 
-$(BIN_DIR)/% : $(OBJ_DIR)/%.o $(LIB_DIR)/libalpha_spblas.a $(TEST_COMMON_OBJS)
+$(BIN_DIR)/% : $(OBJ_DIR)/%.o $(LIB_DIR)/libalphasparse.a $(TEST_COMMON_OBJS)
 	$(CC) -o $@ $^ $(CFLAGS) $(LDFLAGS)
 
 $(ASM_DIR)/%.S : %.c
