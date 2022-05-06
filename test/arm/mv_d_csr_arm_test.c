@@ -33,9 +33,11 @@ ALPHA_INT64 ops;
 static void alpha_mv()
 {
 
-    alphasparse_matrix_t cooA, csrA;
+    alphasparse_matrix_t cooA, csrA, cooB, csrB;
     alpha_call_exit(alphasparse_d_create_coo(&cooA, ALPHA_SPARSE_INDEX_BASE_ZERO, m, k, nnz, row_index, col_index, values), "alphasparse_d_create_coo");
     alpha_call_exit(alphasparse_convert_csr(cooA, ALPHA_SPARSE_OPERATION_NON_TRANSPOSE, &csrA), "alphasparse_convert_csr");
+    alpha_call_exit(alphasparse_convert_coo(csrA, ALPHA_SPARSE_OPERATION_NON_TRANSPOSE, &cooB), "alphasparse_convert_coo");
+    alpha_call_exit(alphasparse_convert_csr(cooB, ALPHA_SPARSE_OPERATION_NON_TRANSPOSE, &csrB), "alphasparse_convert_csr");
 
     alpha_timer_t timer;
     double total_time = 0.;
@@ -45,7 +47,7 @@ static void alpha_mv()
     {
         // alpha_clear_cache();
         alpha_timing_start(&timer);
-        alpha_call_exit(alphasparse_d_mv(transA, alpha, csrA, descr, x, beta, icty), "alphasparse_d_mv");
+        alpha_call_exit(alphasparse_d_mv(transA, alpha, csrB, descr, x, beta, icty), "alphasparse_d_mv");
         alpha_timing_end(&timer);
         total_time += alpha_timing_elapsed_time(&timer);
     }
@@ -54,6 +56,8 @@ static void alpha_mv()
 
     alphasparse_destroy(cooA);
     alphasparse_destroy(csrA);
+    alphasparse_destroy(cooB);
+    alphasparse_destroy(csrB);
 }
 
 static void alpha_mv_plain()
