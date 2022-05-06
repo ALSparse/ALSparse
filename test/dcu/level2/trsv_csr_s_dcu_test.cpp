@@ -19,7 +19,7 @@ using namespace std;
 extern "C" {
 #endif /* __cplusplus */
 
-#include <alpha_spblas_dcu.h>
+#include <alphasparse_dcu.h>
 
 const char *file;
 int thread_num;

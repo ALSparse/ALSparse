@@ -25,7 +25,7 @@ using namespace std;
 extern "C" {
 #endif /* __cplusplus */
 
-#include <alpha_spblas_dcu.h>
+#include <alphasparse_dcu.h>
 #include "alphasparse/util/io.h"
 #include "alphasparse/util/args.h"
 #include "alphasparse/util/check.h"
