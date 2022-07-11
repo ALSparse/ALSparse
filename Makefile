@@ -7,7 +7,7 @@ INT_64 = 0
 # 表示编不编译 
 HIP_ON = $(shell echo $${HIP_ON:-0})
 # PLAIN 依赖 mkl
-PLAIN_ON = $(shell echo $${PLAIN_ON:-1})
+PLAIN_ON = $(shell echo $${PLAIN_ON:-0})
 # DEBUG
 DEBUG_ON = $(shell echo $${DEBUG_ON:-0})
 ARM_ON = $(shell echo $${ARM_ON:-0})
@@ -15,7 +15,7 @@ HYGON_ON = $(shell echo $${HYGON_ON:-0})
 HAS_MKL = $(shell echo $${HAS_MKL:-0})
 HYGON_ON = 0
 HAS_MKL = 0
-PLAIN_ON = 0
+
 ROOT = $(shell pwd)
 
 LIB_DIR = $(ROOT)/lib
@@ -127,8 +127,8 @@ so : lib
 test : lib
 	$(MAKE) -C test $(@F)
 
-# tool : 
-# 	$(MAKE) -C tools $(@F)
+tool : 
+	$(MAKE) -C tools $(@F)
 
 clean :
 	find $(OBJ_DIR) -type f ! -name "*xgb*.o" -delete

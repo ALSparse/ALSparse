@@ -14,6 +14,8 @@ alphasparse_status_t ONAME(const alphasparse_operation_t operation,
     check_null_return(y, ALPHA_SPARSE_STATUS_NOT_INITIALIZED);
     check_return(A->datatype != ALPHA_SPARSE_DATATYPE, ALPHA_SPARSE_STATUS_INVALID_VALUE);
 
+    alphasparse_status_t status = ALPHA_SPARSE_STATUS_SUCCESS;
+
 #ifndef COMPLEX
     if(operation == ALPHA_SPARSE_OPERATION_CONJUGATE_TRANSPOSE)
         return ALPHA_SPARSE_STATUS_INVALID_VALUE;
@@ -27,17 +29,18 @@ alphasparse_status_t ONAME(const alphasparse_operation_t operation,
     if (A->exe == ALPHA_SPARSE_EXE_HOST)
     {
 #ifdef S
-        alphasparse_s_mv(operation, alpha, A, descr, x, beta, y);
+        status = alphasparse_s_mv(operation, alpha, A, descr, x, beta, y);
 #endif
 #ifdef D
-        alphasparse_d_mv(operation, alpha, A, descr, x, beta, y);
+        status = alphasparse_d_mv(operation, alpha, A, descr, x, beta, y);
 #endif
 #ifdef C
-        alphasparse_c_mv(operation, alpha, A, descr, x, beta, y);
+        status = alphasparse_c_mv(operation, alpha, A, descr, x, beta, y);
 #endif
 #ifdef Z
-        alphasparse_z_mv(operation, alpha, A, descr, x, beta, y);
+        status = alphasparse_z_mv(operation, alpha, A, descr, x, beta, y);
 #endif
+        return status ;
     }
     else if (A->exe == ALPHA_SPARSE_EXE_DEVICE)
     {
@@ -48,25 +51,28 @@ alphasparse_status_t ONAME(const alphasparse_operation_t operation,
         alphasparse_dcu_csrmv_info_t csrmv_info  = (alphasparse_dcu_csrmv_info_t)alpha_malloc(sizeof(struct _alphasparse_dcu_csrmv_info));
         info->csrmv_info                         = csrmv_info;
         info->csrmv_info->csr_adaptive_has_tuned = false;
-        ALPHA_INT m   = A->mat->rows;
-        ALPHA_INT n   = A->mat->cols;
-        ALPHA_INT nnz = A->mat->rows_end[m - 1] - A->mat->rows_start[0] + 1
+        
         if (A->format == ALPHA_SPARSE_FORMAT_CSR)
         {
-#ifdef S
-            alphasparse_dcu_s_csrmv(A->handle, operation, m, n, nnz, &alpha, descrA, A->mat->d_values, A->mat->d_row_ptr, A->mat->d_col_indx, info, x, &beta, y);
+            ALPHA_SPMAT_CSR* AA = (ALPHA_SPMAT_CSR*)((alphasparse_matrix*)A)->mat;
+            ALPHA_INT m   = AA->rows;
+            ALPHA_INT n   = AA->cols;
+            ALPHA_INT nnz = AA->rows_end[m - 1] - AA->rows_start[0];
+#ifdef S            
+            status = alphasparse_dcu_s_csrmv(A->handle, operation, m, n, nnz, &alpha, descrA, AA->d_values, AA->d_row_ptr, AA->d_col_indx, info, x, &beta, y);
 #endif
 #ifdef D
-            alphasparse_dcu_d_csrmv(A->handle, operation, m, n, nnz, &alpha, descrA, A->mat->d_values, A->mat->d_row_ptr, A->mat->d_col_indx, info, x, &beta, y);
+            status = alphasparse_dcu_d_csrmv(A->handle, operation, m, n, nnz, &alpha, descrA, AA->d_values, AA->d_row_ptr, AA->d_col_indx, info, x, &beta, y);
 #endif
 #ifdef C
-            alphasparse_dcu_c_csrmv(A->handle, operation, m, n, nnz, &alpha, descrA, A->mat->d_values, A->mat->d_row_ptr, A->mat->d_col_indx, info, x, &beta, y);
+            status = alphasparse_dcu_c_csrmv(A->handle, operation, m, n, nnz, &alpha, descrA, AA->d_values, AA->d_row_ptr, AA->d_col_indx, info, x, &beta, y);
 #endif
 #ifdef Z
-            alphasparse_dcu_z_csrmv(A->handle, operation, m, n, nnz, &alpha, descrA, A->mat->d_values, A->mat->d_row_ptr, A->mat->d_col_indx, info, x, &beta, y);
+            status = alphasparse_dcu_z_csrmv(A->handle, operation, m, n, nnz, &alpha, descrA, AA->d_values, AA->d_row_ptr, AA->d_col_indx, info, x, &beta, y);
 #endif
         }
 #endif
+        return status ;
     }
     else
     {

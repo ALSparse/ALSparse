@@ -1,7 +1,7 @@
 #pragma once
 
 #ifdef __DCU__
-#include <hip/hip_runtime_api.h>
+// #include <hip/hip_runtime_api.h>
 #include "alphasparse/handle.h"
 #endif
 

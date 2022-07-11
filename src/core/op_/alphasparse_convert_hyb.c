@@ -1,6 +1,7 @@
 #include "alphasparse/format.h"
 #include "alphasparse/spmat.h"
 #include "alphasparse/util/check.h"
+#include "alphasparse_cpu.h"
 
 alphasparse_status_t convert_hyb_datatype_coo(const alpha_internal_spmat *source,
                                              alpha_internal_spmat **dest,

@@ -1,4 +1,4 @@
-#include "alphasparse.h"
+#include "alphasparse_cpu.h"
 #include "alphasparse/format.h"
 #include "alphasparse/spmat.h"
 

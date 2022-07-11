@@ -1,4 +1,4 @@
-#include "alphasparse.h"
+#include "alphasparse_cpu.h"
 #include <stdlib.h>
 #include <alphasparse/opt.h>
 #include <alphasparse/util.h>
