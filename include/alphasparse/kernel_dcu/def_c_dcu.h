@@ -712,3 +712,6 @@
 
 // csr5
 #define dcu_gemv_csr5 dcu_gemv_c_csr5
+
+#define host2device_coo host2device_c_coo
+#define host2device_csr host2device_c_csr

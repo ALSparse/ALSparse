@@ -10,7 +10,9 @@ extern "C"
 #endif /* __cplusplus */
 
 #include "alphasparse_cpu.h"  
+#ifdef __DCU__
 #include "alphasparse_dcu.h"
+#endif
 
 #include "alphasparse/spapi_uni.h"
 

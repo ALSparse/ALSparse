@@ -1,5 +1,10 @@
 #pragma once
 
+#ifdef __DCU__
+#include <hip/hip_runtime_api.h>
+#include "alphasparse/handle.h"
+#endif
+
 /**
  * @brief header for basic types and constants for openspblas spblas API
  */
@@ -159,6 +164,11 @@ typedef enum
 
 #endif
 
+typedef enum {
+  ALPHA_SPARSE_EXE_HOST = 0,
+  ALPHA_SPARSE_EXE_DEVICE = 1,
+} alphasparse_executor_t;
+
 typedef void *alpha_internal_spmat;
 
 typedef struct {
@@ -167,6 +177,10 @@ typedef struct {
   alphasparse_datatype_t datatype;    // s,d,c,z
   void *inspector;  // for autotuning
   void *dcu_info;                     // for dcu autotuning, alphasparse_dcu_mat_info_t
+  alphasparse_executor_t exe;
+#ifdef __DCU__
+  alphasparse_dcu_handle_t handle;
+#endif
 } alphasparse_matrix;
 
 typedef alphasparse_matrix *alphasparse_matrix_t;
@@ -260,4 +274,3 @@ typedef enum {
 typedef enum {
   ALPHA_SPARSE_DCU_SPGEMM_ALG_DEFAULT = 0 /**< Default SpGEMM algorithm for the given format. */
 } alphasparse_dcu_spgemm_alg_t;
-
