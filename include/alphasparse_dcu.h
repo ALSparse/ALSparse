@@ -7,7 +7,7 @@ extern "C"
 #endif /* __cplusplus */
 
 #include "alphasparse/types.h"  // basic type define
-#include "alphasparse/opt.h"    // optimazation
+// #include "alphasparse/opt.h"    // optimazation
 #include "alphasparse/spdef.h"  // spblas type define 
 #include "alphasparse/spapi.h"  // spblas API
 #include "alphasparse/spapi_dcu.h"  // spblas API for DCU

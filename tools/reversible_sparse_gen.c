@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
     if (argc == 3)
     {
         m = atol(argv[1]);
-        rate = atof(argv[3]);
+        rate = atof(argv[2]);
     }
     else if (argc == 2)
     {
@@ -88,7 +88,7 @@ int main(int argc, char *argv[])
     int64_t count = index + 1;
     //output
     char filename[100];
-    sprintf(filename, "Matrix/r_%ld_%ld_%ld.mtx", m, m, count);
+    sprintf(filename, "Matrix/r_%ld_%ld_%f.mtx", m, m, rate);
     FILE *fp = fopen(filename, "w");
     if (fp == NULL)
     {

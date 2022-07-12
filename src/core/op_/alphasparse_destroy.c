@@ -3,7 +3,7 @@
  * @author Zhuoqiang Guo <gzq9425@qq.com>
  */
 
-#include "alphasparse.h"
+#include "alphasparse_cpu.h"
 #include "alphasparse/format.h"
 #include "alphasparse/spmat.h"
 

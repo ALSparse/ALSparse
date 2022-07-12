@@ -5,7 +5,7 @@
 
 #include "alphasparse/util/io.h"
 #include "alphasparse/util/error.h"
-#include "alphasparse.h"
+#include "alphasparse_cpu.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>

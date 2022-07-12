@@ -105,6 +105,7 @@ CEXTRAFLAGS += -lstdc++ -L$(ROCM_DIR)/hip/lib -L$(ROCM_DIR)/rocsparse/lib -lamdh
 
 ifeq ($(HIP_ON),1)
 LDFLAGS += $(CEXTRAFLAGS)
+CPPFLAGS += $(CEXTRAFLAGS)
 DEFINE += -D__DCU__
 endif
 

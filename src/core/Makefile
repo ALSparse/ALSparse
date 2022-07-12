@@ -1,4 +1,4 @@
-SUBDIRS = format op_
+SUBDIRS = format op_ op_uni
 
 ifeq ($(HIP_ON),1)
 SUBDIRS += op_dcu hint

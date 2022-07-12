@@ -3,17 +3,17 @@
 /**
  * @brief header for all openspblas spblas public APIs;
  */ 
+#ifdef __DCU__
+#include "alphasparse_dcu.h"
+#include "alphasparse/spapi_dcu.h"  // spblas API for DCU
+#endif
 
 #ifdef __cplusplus
 extern "C"
 {
 #endif /* __cplusplus */
 
-#include "alphasparse_cpu.h"  
-#ifdef __DCU__
-#include "alphasparse_dcu.h"
-#include "alphasparse/spapi_dcu.h"  // spblas API for DCU
-#endif
+#include "alphasparse_cpu.h" 
 
 #include "alphasparse/spapi.h"
 #include "alphasparse/spapi_uni.h"

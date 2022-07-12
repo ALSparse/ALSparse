@@ -6,9 +6,6 @@
 
 #include "alphasparse/format.h"
 #include "alphasparse/util.h"
-#ifdef __DCU__
-#include "alphasparse/util/qsort_csr_struct.h"
-#endif
 
 alphasparse_status_t ONAME(const ALPHA_SPMAT_CSR *source, ALPHA_SPMAT_COO **dest) {
   ALPHA_SPMAT_COO *mat = alpha_malloc(sizeof(ALPHA_SPMAT_COO));

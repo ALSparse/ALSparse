@@ -1,4 +1,9 @@
-#include "alphasparse.h"
+#include "alphasparse/spapi.h"
+#ifdef __DCU__
+#include "alphasparse_dcu.h"
+#endif
+#include "alphasparse/format.h"
+#include "alphasparse/spmat.h"
 
 alphasparse_status_t ONAME(const alphasparse_operation_t operation,
                           const ALPHA_Number alpha,
@@ -8,24 +13,7 @@ alphasparse_status_t ONAME(const alphasparse_operation_t operation,
                           const ALPHA_Number beta,
                           ALPHA_Number *y)
 {
-    check_null_return(A, ALPHA_SPARSE_STATUS_NOT_INITIALIZED);
-    check_null_return(A->mat, ALPHA_SPARSE_STATUS_NOT_INITIALIZED);
-    check_null_return(x, ALPHA_SPARSE_STATUS_NOT_INITIALIZED);
-    check_null_return(y, ALPHA_SPARSE_STATUS_NOT_INITIALIZED);
-    check_return(A->datatype != ALPHA_SPARSE_DATATYPE, ALPHA_SPARSE_STATUS_INVALID_VALUE);
-
-    alphasparse_status_t status = ALPHA_SPARSE_STATUS_SUCCESS;
-
-#ifndef COMPLEX
-    if(operation == ALPHA_SPARSE_OPERATION_CONJUGATE_TRANSPOSE)
-        return ALPHA_SPARSE_STATUS_INVALID_VALUE;
-#endif
-
-    if(descr.type == ALPHA_SPARSE_MATRIX_TYPE_SYMMETRIC || descr.type == ALPHA_SPARSE_MATRIX_TYPE_HERMITIAN)
-        // check if it is a square matrix 
-        check_return(!check_equal_row_col(A),ALPHA_SPARSE_STATUS_INVALID_VALUE);
-
-
+    alphasparse_status_t status;
     if (A->exe == ALPHA_SPARSE_EXE_HOST)
     {
 #ifdef S
@@ -47,7 +35,10 @@ alphasparse_status_t ONAME(const alphasparse_operation_t operation,
 #ifdef __DCU__
         alpha_dcu_matrix_descr_t descrA;
         alphasparse_dcu_create_mat_descr(&descrA);
-        alphasparse_dcu_mat_info_t info         = (alphasparse_dcu_mat_info_t)alpha_malloc(sizeof(struct _alphasparse_dcu_mat_info));
+        alphasparse_dcu_handle_t handle;
+        init_handle(&handle);
+        alphasparse_dcu_get_handle(&handle);
+        alphasparse_dcu_mat_info_t info          = (alphasparse_dcu_mat_info_t)alpha_malloc(sizeof(struct _alphasparse_dcu_mat_info));
         alphasparse_dcu_csrmv_info_t csrmv_info  = (alphasparse_dcu_csrmv_info_t)alpha_malloc(sizeof(struct _alphasparse_dcu_csrmv_info));
         info->csrmv_info                         = csrmv_info;
         info->csrmv_info->csr_adaptive_has_tuned = false;
@@ -59,17 +50,19 @@ alphasparse_status_t ONAME(const alphasparse_operation_t operation,
             ALPHA_INT n   = AA->cols;
             ALPHA_INT nnz = AA->rows_end[m - 1] - AA->rows_start[0];
 #ifdef S            
-            status = alphasparse_dcu_s_csrmv(A->handle, operation, m, n, nnz, &alpha, descrA, AA->d_values, AA->d_row_ptr, AA->d_col_indx, info, x, &beta, y);
+            status = alphasparse_dcu_s_csrmv(handle, operation, m, n, nnz, &alpha, descrA, AA->d_values, AA->d_row_ptr, AA->d_col_indx, info, x, &beta, y);
 #endif
 #ifdef D
-            status = alphasparse_dcu_d_csrmv(A->handle, operation, m, n, nnz, &alpha, descrA, AA->d_values, AA->d_row_ptr, AA->d_col_indx, info, x, &beta, y);
+            status = alphasparse_dcu_d_csrmv(handle, operation, m, n, nnz, &alpha, descrA, AA->d_values, AA->d_row_ptr, AA->d_col_indx, info, x, &beta, y);
 #endif
 #ifdef C
-            status = alphasparse_dcu_c_csrmv(A->handle, operation, m, n, nnz, &alpha, descrA, AA->d_values, AA->d_row_ptr, AA->d_col_indx, info, x, &beta, y);
+            status = alphasparse_dcu_c_csrmv(handle, operation, m, n, nnz, &alpha, descrA, AA->d_values, AA->d_row_ptr, AA->d_col_indx, info, x, &beta, y);
 #endif
 #ifdef Z
-            status = alphasparse_dcu_z_csrmv(A->handle, operation, m, n, nnz, &alpha, descrA, AA->d_values, AA->d_row_ptr, AA->d_col_indx, info, x, &beta, y);
+            status = alphasparse_dcu_z_csrmv(handle, operation, m, n, nnz, &alpha, descrA, AA->d_values, AA->d_row_ptr, AA->d_col_indx, info, x, &beta, y);
 #endif
+            alphasparse_dcu_destory_handle(handle);
+            return status ;
         }
 #endif
         return status ;

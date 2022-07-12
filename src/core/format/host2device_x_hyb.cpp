@@ -1,5 +1,4 @@
 
-#include "alphasparse/util.h"
 #include "alphasparse/format.h"
 #ifdef __DCU__
 #include <hip/hip_runtime_api.h>
