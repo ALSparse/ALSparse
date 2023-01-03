@@ -16,6 +16,6 @@ ifeq ($(OPENMP),1)
 CFLAGS += -liomp5
 endif
 
-CFLAGS += $(INC) $(LIB) $(DEFINE) -l:libalphasparse.a -lm
+CFLAGS += $(INC) $(LIB) $(DEFINE) -l:libalpha_spblas.a -lm
 
 include $(ROOT)/Makefile.tail
