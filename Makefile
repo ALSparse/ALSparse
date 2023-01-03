@@ -83,13 +83,24 @@ CC = gcc
 ifeq ($(CPUVENDOR),GenuineIntel)
 CC = icc
 endif
-CFLAGS += -march=native
 CFLAGS += -m64
 CFLAGS += -march=native
 DEFINE += -D__x86_64__
 ifeq ($(HAS_MKL), 1)
 DEFINE += -D__MKL__
 endif
+endif
+ifeq ($(ARCH),ppc)
+CC = gcc
+CFLAGS += -mtune=native
+CFLAGS += -arch ppc
+DEFINE += -Dppc
+endif
+ifeq ($(ARCH),ppc64)
+CC = gcc
+CFLAGS += -mtune=native
+CFLAGS += -arch ppc64
+DEFINE += -Dppc64
 endif
 ifeq ($(CC), gcc)
 endif
